@@ -1,0 +1,374 @@
+Date,Amount,Where?,What?,Category,Source
+"Sat, 24 May 2025",$13.33,Uber,Cab - home to FedEx,Travel,Chase
+"Sat, 24 May 2025",$6.15,Uber,Cab - FedEx to walmart,Travel,Chase
+"Sat, 24 May 2025",$1.00,CityBus,Bus ticket,Travel,Chase
+"Sat, 24 May 2025",$13.55,Uber,Cab - home to FedEx,Travel,Chase
+"Sat, 24 May 2025",$16.15,Uber,Cab - FedEx to home,Travel,Chase
+"Mon, 26 May 2025",$379.88,Southern Airways,Flight - LAF to PIT,Travel,Chase
+"Mon, 26 May 2025",$66.15,T-Mobile,Monthly Bill - Mobile,Essentials,Chase
+"Tue, 27 May 2025",$4.80,Indian & Int. Grocery,Rose Milk,Food,Chase
+"Wed, 28 May 2025",$8.71,Lyft,Cab - home to Hertz,Travel,Chase
+"Wed, 28 May 2025",$42.10,Hertz,Car rental,Personal,Credit
+"Wed, 28 May 2025",$10.00,Thai Essence,Noodles,Food,Chase
+"Wed, 28 May 2025",$10.00,Thai Essence,For Malomee - noodles,Personal,Chase
+"Thu, 29 May 2025",$4.27,Crumbl,Cookie,Food,Chase
+"Thu, 29 May 2025",$10.59,Gas station,Gas,Personal,Chase
+"Fri, 30 May 2025",$23.71,Strings Ramen,Ramen,Food,Chase
+"Fri, 30 May 2025",$4.80,Indian & Int. Grocery,Rose Milk,Food,Chase
+"Sat, 31 May 2025",$8.00,Uber,Cab - home to LAF,Travel,Chase
+"Sat, 31 May 2025",$12.29,Burger Federation,Avocado toast,Food,Chase
+"Sat, 31 May 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Sat, 31 May 2025",$12.15,Aldi,Groceries,Home,Chase
+"Sun, 1 Jun 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Sun, 1 Jun 2025",$12.58,Walmart,Groceries,Home,Chase
+"Sun, 1 Jun 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Sun, 1 Jun 2025",$7.00,Condado Tacos,Chips,Food,Chase
+"Sun, 1 Jun 2025",$1.50,Trader Joe’s,Chips,Home,Chase
+"Sun, 1 Jun 2025",$0.99,Hulu,Monthly Subscription - Hulu,Essentials,Chase
+"Tue, 3 Jun 2025",$7.00,PRT,Bus ticket,Travel,Chase
+"Tue, 3 Jun 2025",$3.25,BCTA,Bus ticket,Travel,Chase
+"Tue, 3 Jun 2025",$7.34,Uber,Cab - bus stop to AE Works,Travel,Chase
+"Tue, 3 Jun 2025",$5.00,Mediterra Cafe,Croissant,Food,Chase
+"Tue, 3 Jun 2025",$6.96,Press House Coffee,Matcha,Food,Chase
+"Tue, 3 Jun 2025",$5.74,Bombay Food Market,Dosa batter,Home,Chase
+"Tue, 3 Jun 2025",$7.48,Tamarind,Biriyani,Food,Chase
+"Tue, 3 Jun 2025",$4.99,Whole Foods Market,Tres Leches,Food,Chase
+"Wed, 4 Jun 2025",$6.49,5801 Video Lounge & Bar,"Fries, Falafel",Food,Chase
+"Wed, 4 Jun 2025",$12.91,Uber,Cab - home to theatre,Travel,Chase
+"Wed, 4 Jun 2025",$1.00,Lyft,Cancellation Fee,Travel,Chase
+"Wed, 4 Jun 2025",$23.00,AMC Waterfront,Movie - Thug Life,Personal,Chase
+"Wed, 4 Jun 2025",$11.01,AMC Waterfront,Popcorn,Food,Chase
+"Wed, 4 Jun 2025",$5.78,Uber,Cab - theatre to home,Travel,Chase
+"Thu, 5 Jun 2025",$27.75,Zipcar,Zipcar application fee,Personal,Chase
+"Thu, 5 Jun 2025",$22.33,Zipcar,Car rental,Personal,Chase
+"Thu, 5 Jun 2025",$7.25,Buenatarde Tequila y Mezcal,Chips & Guac,Food,Chase
+"Fri, 6 Jun 2025",$1.70,Aldi,"Lemonade, Ice cream",Food,Chase
+"Fri, 6 Jun 2025",$5.31,5801 Video Lounge & Bar,Snacks,Food,Chase
+"Sat, 7 Jun 2025",$7.25,Cafe Moulin,Crêpe,Food,Chase
+"Sat, 7 Jun 2025",$25.61,Zipcar,Car rental,Personal,Chase
+"Sat, 7 Jun 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Sat, 7 Jun 2025",$17.33,Thai Table and Kitchen,Thai food,Food,Chase
+"Sat, 7 Jun 2025",$34.67,Thai Table and Kitchen,For Dyanu & Sushruti - Thai food,Personal,Chase
+"Sat, 7 Jun 2025",$1.29,Baskin Robbins,Ice cream,Food,Chase
+"Sun, 8 Jun 2025",$3.35,Slice on Broadway,"Pizza, Garlic knots",Food,Chase
+"Sun, 8 Jun 2025",$6.15,Tous Les Jours,Matcha,Food,Chase
+"Sun, 8 Jun 2025",$4.05,Tous Les Jours,For Dyanu - Iced Mocha,Personal,Chase
+"Sun, 8 Jun 2025",$3.00,Target,Salad,Home,Chase
+"Mon, 9 Jun 2025",$28.93,Zipcar,Car rental,Personal,Chase
+"Mon, 9 Jun 2025",$12.06,5801 Video Lounge & Bar,"Fries, Mac & Cheese wedges",Food,Chase
+"Tue, 10 Jun 2025",$35.00,Delta Airlines,Luggage fee,Others,Credit
+"Tue, 10 Jun 2025",$3.20,Slice on Broadway,Garlic knots,Food,Chase
+"Tue, 10 Jun 2025",$6.53,Delanie’s Coffee,Matcha,Food,Chase
+"Wed, 11 Jun 2025",$465.22,Agoda,Hotel - Embassy Suites Chicago,Others,Credit
+"Wed, 11 Jun 2025",$35.00,Uber,Cab - home to PIT,Others,Chase
+"Wed, 11 Jun 2025",$6.50,MSP Airport,Pasta,Others,Chase
+"Wed, 11 Jun 2025",$6.91,Caribou Coffee,Refresher,Others,Chase
+"Wed, 11 Jun 2025",$3.55,SFO Airport - Vending,Chips,Others,Chase
+"Wed, 11 Jun 2025",$4.59,SFO Airport,Croissant,Others,Chase
+"Wed, 11 Jun 2025",$17.80,Starbucks,Drinks,Others,Starbucks
+"Wed, 11 Jun 2025",$1.99,Peacock,Monthly Subscription - Peacock,Essentials,Chase
+"Thu, 12 Jun 2025",$7.09,Stanford,Parking,Others,Chase
+"Thu, 12 Jun 2025",$6.54,Round Table Pizza,Breadsticks,Others,Chase
+"Thu, 12 Jun 2025",$23.05,Starbucks,Drinks,Others,Starbucks
+"Thu, 12 Jun 2025",$18.37,Uber,Cab - Mountain View to Anjappar,Others,Chase
+"Thu, 12 Jun 2025",$46.21,Anjappar,"Dosa, Rose Milk",Others,Chase
+"Fri, 13 Jun 2025",$28.56,T-Mobile,MiFi Device,Others,Chase
+"Fri, 13 Jun 2025",$4.95,Starbucks,Falafel pocket,Others,Starbucks
+"Fri, 13 Jun 2025",$5.36,In-N-Out Burger,Fries,Others,Chase
+"Fri, 13 Jun 2025",$25.88,Uber,Cab - Milpitas to Tesla,Others,Chase
+"Sat, 14 Jun 2025",$140.00,American Airlines,Luggage fee,Others,Chase
+"Sat, 14 Jun 2025",$30.14,Levi’s,Clothes,Others,Chase
+"Sat, 14 Jun 2025",$22.28,La Dolce Vita Gelato,"Ice cream, Dubai chocolate strawberries",Others,Chase
+"Sat, 14 Jun 2025",$21.86,H&M,Clothes,Others,Chase
+"Sat, 14 Jun 2025",$6.50,Devil & Angel Desserts,Refresher,Others,Chase
+"Sat, 14 Jun 2025",-$5.40,Costco,Cost adjustment - chocolates,Others,BofA
+"Sun, 15 Jun 2025",$55.00,Uber,Cab - ORD to hotel,Others,Chase
+"Sun, 15 Jun 2025",$40.00,Embassy Suites Chicago,Early check-in fee,Others,Chase
+"Sun, 15 Jun 2025",$28.45,Taco Maya,Tacos,Others,Chase
+"Sun, 15 Jun 2025",$20.00,ChatGPT,Monthly Subscription - ChatGPT,Essentials,Chase
+"Sun, 15 Jun 2025",$20.67,Starbucks Reserve,Drinks,Others,Starbucks
+"Sun, 15 Jun 2025",$34.48,Nutella Cafe,"Fruit bowl, crêpe, nutella jar",Others,Chase
+"Sun, 15 Jun 2025",$8.09,Uber,Cab - Michigan Ave to Navy Pier,Others,Chase
+"Sun, 15 Jun 2025",$11.00,SALT,Fries,Others,Chase
+"Sun, 15 Jun 2025",$11.49,Navy Pier,Ride,Others,Chase
+"Sun, 15 Jun 2025",$7.74,Uber,Cab - Navy Pier to hotel,Others,Chase
+"Sun, 15 Jun 2025",$5.56,Dunkin’ Donuts,Milkshake,Others,Chase
+"Sun, 15 Jun 2025",$3.17,7-Eleven,Water bottles,Others,Chase
+"Mon, 16 Jun 2025",$2.26,Taco Maya,Tacos,Others,Chase
+"Tue, 17 Jun 2025",$16.00,Uber,Cab - hotel to Union station,Others,Chase
+"Tue, 17 Jun 2025",$2.25,Amtrak,Water bottle,Others,Chase
+"Tue, 17 Jun 2025",$19.00,Lyft,Cab - Champaign to Savoy,Others,Chase
+"Tue, 17 Jun 2025",$13.07,Uber,Cab - Savoy to Champaign,Others,Chase
+"Tue, 17 Jun 2025",$35.96,Noodles & Company,"Noodles, Pasta, Garlic bread",Others,Chase
+"Tue, 17 Jun 2025",$8.36,Kyo Matcha,Matcha,Others,Chase
+"Tue, 17 Jun 2025",$5.95,Purdue Union Rack N Roll,Snooker,Others,Chase
+"Wed, 18 Jun 2025",$1.20,West Lafayette,Parking,Others,Chase
+"Wed, 18 Jun 2025",$44.00,Purdue Union Rack N Roll,Bowling,Others,Chase
+"Wed, 18 Jun 2025",$9.00,Purdue,Parking,Others,Chase
+"Thu, 19 Jun 2025",$9.93,Uber,Cab - hotel to home,Others,Chase
+"Thu, 19 Jun 2025",$8.00,Cafe Neo,Mocha,Others,Chase
+"Thu, 19 Jun 2025",$15.23,Taco Bell,Tacos,Others,Chase
+"Thu, 19 Jun 2025",$9.84,Jeni’s Splendid Ice Creams,Ice cream,Others,Chase
+"Fri, 20 Jun 2025",$42.00,Cafe Moulin,Crêpes,Others,Chase
+"Fri, 20 Jun 2025",$17.31,Carnegie Mellon,Parking,Others,Chase
+"Fri, 20 Jun 2025",$77.87,Zipcar,Car rental,Others,Chase
+"Fri, 20 Jun 2025",$11.00,PRT,Incline tickets,Others,Chase
+"Fri, 20 Jun 2025",$9.63,Mango Mango,Refresher,Others,Chase
+"Sat, 21 Jun 2025",$11.00,HeBrews Coffee,"Bagel, Mocha",Others,Chase
+"Sat, 21 Jun 2025",$1.00,Princeton,Parking,Others,Chase
+"Sat, 21 Jun 2025",$47.02,Fat Cactus Cantina,Tacos,Others,Chase
+"Sat, 21 Jun 2025",$7.00,New Brunswick,Parking,Others,Chase
+"Sat, 21 Jun 2025",$33.60,NJ Transit,Rail - EWR to NY Penn,Others,Chase
+"Sun, 22 Jun 2025",$2.99,Apple,Monthly Bill - iCloud,Essentials,BofA
+"Sun, 22 Jun 2025",$5.99,Apple,Monthly Subscription - Apple Music,Essentials,BofA
+"Sun, 22 Jun 2025",$6.74,McDonald’s,By Shreeja,Others,Chase
+"Sun, 22 Jun 2025",$17.75,Ferrara Bakery & Cafe,By Shreeja,Others,Chase
+"Sun, 22 Jun 2025",$16.71,Starbucks,Drinks,Others,Starbucks
+"Sun, 22 Jun 2025",$45.89,Uber,Cab - Manhattan to India Square,Others,Chase
+"Sun, 22 Jun 2025",$14.10,Hershey’s Chocolate World,S’mores,Others,Chase
+"Sun, 22 Jun 2025",$13.91,Uber,Cab - Times Square to hotel,Others,Chase
+"Mon, 23 Jun 2025",$13.00,Popup Bagels,By Shreeja,Others,Chase
+"Mon, 23 Jun 2025",$204.48,Delta Airlines,Flight - BOS to ORD,Others,Chase
+"Mon, 23 Jun 2025",$24.93,Macy’s,By Shreeja,Others,Chase
+"Mon, 23 Jun 2025",$20.09,Tous Les Jours,"Tiramisu Latte, Matcha, Bun",Others,Chase
+"Mon, 23 Jun 2025",$16.00,NJ Transit,Bus - Manhattan to Weehawken,Others,Chase
+"Mon, 23 Jun 2025",$9.98,Mokafe,Biscoff Tres Leches,Others,Chase
+"Mon, 23 Jun 2025",$40.00,NY Waterway,Ferry - Lincoln Harbor to Midtown,Others,Chase
+"Mon, 23 Jun 2025",$25.00,Joe’s Pizza,Pizza,Others,Chase
+"Mon, 23 Jun 2025",$15.13,Starbucks,Drinks,Others,Starbucks
+"Tue, 24 Jun 2025",$5.55,Liberty Bagels,By Shreeja,Others,Chase
+"Tue, 24 Jun 2025",$116.86,Aeropostale,By Shreeja,Others,Chase
+"Tue, 24 Jun 2025",$27.20,Food Gallery 32,"Fried rice, Tofu",Others,Chase
+"Tue, 24 Jun 2025",$1.50,Food Gallery 32,Water bottle,Others,Chase
+"Tue, 24 Jun 2025",$11.97,Pelicana Chicken,Fries,Others,Chase
+"Tue, 24 Jun 2025",$22.21,Grace Street,"Cheesecake, Refresher",Others,Chase
+"Tue, 24 Jun 2025",$7.63,Paper Coffee,Matcha,Others,Chase
+"Tue, 24 Jun 2025",$136.04,Agoda,Avid hotel Chicago,Others,Chase
+"Tue, 24 Jun 2025",$17.18,Levain Cookies,By Shreeja,Others,Chase
+"Tue, 24 Jun 2025",$7.70,Lourdes Fruit,By Shreeja,Others,Chase
+"Tue, 24 Jun 2025",$36.68,Lyft,Cab - Dumbo to Manhattan,Others,Chase
+"Tue, 24 Jun 2025",$18.13,Chipotle,By Shreeja,Others,Chase
+"Tue, 24 Jun 2025",$4.57,Bravo Pizza,Garlic knots,Others,Chase
+"Tue, 24 Jun 2025",$5.00,Fairfield Inn & Suites Chelsea,Gatorade,Others,Chase
+"Wed, 25 Jun 2025",$11.73,McDonald’s,By Shreeja,Others,Chase
+"Wed, 25 Jun 2025",$19.60,The Grey Dog,By Shreeja,Others,Chase
+"Wed, 25 Jun 2025",$15.45,Paris Baguette,Croissants,Others,Chase
+"Wed, 25 Jun 2025",$12.00,Broadway show,By Shreeja,Others,Chase
+"Wed, 25 Jun 2025",$9.80,Cha Cha Matcha,Lavender Matcha,Others,Credit
+"Wed, 25 Jun 2025",$22.76,Trattoria,By Shreeja,Others,Chase
+"Wed, 25 Jun 2025",$8.70,Hey Tea,By Shreeja,Others,Chase
+"Wed, 25 Jun 2025",$6.91,Seven Grams Caffe,Cookie,Others,Chase
+"Wed, 25 Jun 2025",$7.20,LaDuree,Macaroons,Others,Chase
+"Wed, 25 Jun 2025",$16.00,NJ Transit,Bus - Manhattan to Weehawken,Others,Chase
+"Wed, 25 Jun 2025",$40.00,NY Waterway,Ferry - Lincoln Harbor to Midtown,Others,Chase
+"Wed, 25 Jun 2025",$15.80,Madras Dosa Co.,Thattu Idli,Others,Chase
+"Wed, 25 Jun 2025",$60.00,Reindeer Shuttle,Bus - ORD to PMU,Others,Mastercard
+"Thu, 26 Jun 2025",$3.69,McDonald’s,By Shreeja,Others,Chase
+"Thu, 26 Jun 2025",$16.54,T-Mobile,Monthly Bill - Mobile,Essentials,Chase
+"Thu, 26 Jun 2025",$130.53,Uber,Cab - hotel to EWR,Others,Chase
+"Thu, 26 Jun 2025",$37.70,MTA,By Shreeja,Others,Chase
+"Thu, 26 Jun 2025",$31.90,MTA,Subway tickets,Others,Credit
+"Thu, 26 Jun 2025",$48.04,Olive Garden,"Pastas, Salad",Others,Chase
+"Thu, 26 Jun 2025",$1.55,City of Cambridge,Parking,Others,Chase
+"Thu, 26 Jun 2025",$21.74,Cheesecake Factory,"Cheesecake, Fries",Others,Chase
+"Thu, 26 Jun 2025",$4.00,City of Cambridge,Parking,Others,Chase
+"Thu, 26 Jun 2025",$6.15,BOS Airport,Croissant,Others,Chase
+"Thu, 26 Jun 2025",$6.64,Uber,Cab - ORD to hotel,Others,Chase
+"Fri, 27 Jun 2025",$9.94,Taco Maya,Tacos,Others,Chase
+"Fri, 27 Jun 2025",$4.15,Uber,Cab - hotel to ORD,Others,Chase
+"Fri, 27 Jun 2025",$10.00,Reindeer Shuttle,Bus modification fee,Others,Chase
+"Fri, 27 Jun 2025",$13.38,Noodles & Company,"Pasta, Garlic bread",Food,Chase
+"Sat, 28 Jun 2025",$12.19,Dagu Rice Noodle,Fried rice,Food,Chase
+"Sat, 28 Jun 2025",$5.35,Greyhouse Coffee,London fog latte,Food,Credit
+"Sat, 28 Jun 2025",$3.75,Taste of India,Naan,Food,Chase
+"Sun, 29 Jun 2025",$15.35,Pocha,Korean food,Food,Chase
+"Sun, 29 Jun 2025",$6.47,Indian & Int. Grocery,Sandwich,Food,Chase
+"Mon, 30 Jun 2025",$6.37,Starbucks,Frap of Colors,Food,Starbucks
+"Mon, 30 Jun 2025",$8.29,Noodles & Company,Pasta,Food,Chase
+"Tue, 1 Jul 2025",$9.62,Dakshin,Dosa,Food,Credit
+"Tue, 1 Jul 2025",$1.00,CityBus,Bus ticket,Travel,Chase
+"Tue, 1 Jul 2025",$100.12,Avis Car Rental,Car rental,Travel,Credit
+"Tue, 1 Jul 2025",$31.93,Target,Groceries,Home,Credit
+"Tue, 1 Jul 2025",$8.01,Papa John’s,Breadsticks,Food,Chase
+"Tue, 1 Jul 2025",$9.98,Indian & Int. Grocery,"Dosa batter, chapati",Home,Chase
+"Tue, 1 Jul 2025",$4.80,Indian & Int. Grocery,Rose Milk,Food,Chase
+"Tue, 1 Jul 2025",$0.99,Hulu,Monthly Subscription - Hulu,Essentials,Chase
+"Wed, 2 Jul 2025",$9.62,McAlister’s Deli,Sandwich,Food,Chase
+"Wed, 2 Jul 2025",$1.25,Dollar Tree,Chips Ahoy,Food,Chase
+"Thu, 3 Jul 2025",$1.40,PUSH Lot,Parking,Travel,Chase
+"Thu, 3 Jul 2025",$21.75,Gas station,Gas,Travel,Chase
+"Thu, 3 Jul 2025",$1.00,CityBus,Bus ticket,Travel,Chase
+"Thu, 3 Jul 2025",$18.19,Hyderabad House,Biriyani,Food,Chase
+"Thu, 3 Jul 2025",$25.00,Henni’s Hairshop,Haircut,Essentials,Chase
+"Sun, 6 Jul 2025",$10.66,Tamarind,For Dyanu - Biriyani,Personal,Chase
+"Mon, 7 Jul 2025",$6.42,Greyhouse Coffee,Iced chai,Food,Credit
+"Tue, 8 Jul 2025",$6.42,Greyhouse Coffee,Iced chai,Food,Credit
+"Tue, 8 Jul 2025",$12.84,Greyhouse Coffee,Crêpe,Food,Credit
+"Tue, 8 Jul 2025",$7.48,Dakshin,Samosa chaat,Food,Credit
+"Wed, 9 Jul 2025",$6.42,Greyhouse Coffee,Iced chai,Food,Credit
+"Wed, 9 Jul 2025",$3.50,Smittybread,Croissant,Food,Chase
+"Wed, 9 Jul 2025",$4.99,Lyft,Cab - cafe to home,Travel,Chase
+"Fri, 11 Jul 2025",$374.88,Expedia,Flight - LAF to PIT,Travel,Chase
+"Fri, 11 Jul 2025",$1.00,CityBus,Bus ticket,Travel,Chase
+"Fri, 11 Jul 2025",$230.55,Avis Car Rental,Car rental,Travel,Credit
+"Fri, 11 Jul 2025",$14.63,Dagu Rice Noodle,Fried rice,Food,Chase
+"Fri, 11 Jul 2025",$6.42,Greyhouse Coffee,Lemonade,Food,Credit
+"Sat, 12 Jul 2025",$7.16,Prufrock Coffee,Matcha,Food,Chase
+"Sat, 12 Jul 2025",$2.48,Walmart,Groceries,Home,Chase
+"Sat, 12 Jul 2025",$11.18,Target,"Groceries, Tape, etc.",Home,Chase
+"Sun, 13 Jul 2025",$5.35,Greyhouse Coffee,Iced chai,Food,Chase
+"Sun, 13 Jul 2025",$7.00,Purdue Union Rack N Roll,Bowling,Personal,Chase
+"Sun, 13 Jul 2025",$9.62,McAlister’s Deli,Sandwich,Food,Chase
+"Mon, 14 Jul 2025",$11.50,The Eleventh House,"Bagel, Matcha",Food,Chase
+"Mon, 14 Jul 2025",$2.40,Purdue,Parking,Travel,Chase
+"Tue, 15 Jul 2025",$6.90,Purdue,Parking,Travel,Chase
+"Tue, 15 Jul 2025",$0.90,Purdue,Parking,Travel,Chase
+"Tue, 15 Jul 2025",$18.13,Thai Essence,Thai food,Food,Credit
+"Tue, 15 Jul 2025",$60.84,Thai Essence,For others - Thai food,Personal,Credit
+"Tue, 15 Jul 2025",-$21.35,Thai Essence,From Niveditha - Thai food,Personal,BofA
+"Tue, 15 Jul 2025",-$21.35,Thai Essence,From Meghana - Thai food,Personal,BofA
+"Tue, 15 Jul 2025",-$18.14,Thai Essence,From Abhishek - Thai food,Personal,BofA
+"Tue, 15 Jul 2025",$43.30,Gas station,Gas,Travel,Credit
+"Tue, 15 Jul 2025",$2.06,Market Square Lanes,Socks,Personal,Chase
+"Tue, 15 Jul 2025",$2.03,Silver Dipper Ice Cream,Ice cream,Food,Chase
+"Wed, 16 Jul 2025",$18.27,BMV,Driving License,Essentials,Chase
+"Wed, 16 Jul 2025",$2.40,Purdue,Parking,Travel,Chase
+"Wed, 16 Jul 2025",$35.00,Purdue,Parking Ticket - Expired Meter,Travel,Chase
+"Wed, 16 Jul 2025",$10.68,Dakshin,Dosa,Food,Chase
+"Wed, 16 Jul 2025",$22.45,Hertz,Car rental,Essentials,Chase
+"Wed, 16 Jul 2025",$0.65,Purdue,Parking,Travel,Chase
+"Wed, 16 Jul 2025",$3.15,Purdue,Parking,Travel,Chase
+"Wed, 16 Jul 2025",$2.45,Cinco De Mayo,Chips,Food,Chase
+"Wed, 16 Jul 2025",$4.79,TJ Maxx,Stroopwafels,Food,Chase
+"Thu, 17 Jul 2025",$4.90,Purdue,Parking,Travel,Chase
+"Thu, 17 Jul 2025",$6.47,Indian & Int. Grocery,Sandwich,Food,Chase
+"Thu, 17 Jul 2025",$1.90,Purdue,Parking,Travel,Chase
+"Fri, 18 Jul 2025",$119.29,A1 Packaging Store,FedEx parcels,Essentials,Chase
+"Fri, 18 Jul 2025",$2.65,Purdue,Parking,Travel,Chase
+"Fri, 18 Jul 2025",$6.96,Noodles & Company,Pasta,Food,Chase
+"Fri, 18 Jul 2025",$11.50,The Eleventh House,"Bagel, Matcha",Food,Chase
+"Fri, 18 Jul 2025",$16.01,Gas station,Gas,Travel,Chase
+"Fri, 18 Jul 2025",$13.00,Uber,Cab - car rental to airport,Travel,Chase
+"Fri, 18 Jul 2025",$30.00,Southern Airways,Checked Baggage,Travel,Credit
+"Fri, 18 Jul 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Fri, 18 Jul 2025",$5.92,Uber,Cab - bus stop to home,Travel,Chase
+"Sat, 19 Jul 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Sat, 19 Jul 2025",$3.20,Slice on Broadway,Garlic knots,Food,Chase
+"Sat, 19 Jul 2025",$21.09,multiple,Groceries,Home,Chase
+"Sun, 20 Jul 2025",$2.71,multiple,Groceries,Home,Chase
+"Mon, 21 Jul 2025",$6.23,Royal Mezbaan,Biriyani,Food,Chase
+"Mon, 21 Jul 2025",$6.24,Royal Mezbaan,For Dyanu - Biriyani,Personal,Chase
+"Tue, 22 Jul 2025",$2.99,Apple,Monthly Bill - iCloud,Essentials,BofA
+"Tue, 22 Jul 2025",$5.99,Apple,Monthly Subscription - Apple Music,Essentials,BofA
+"Tue, 22 Jul 2025",$12.84,Noodles & Company,"Pasta, Garlic bread",Food,Credit
+"Tue, 22 Jul 2025",$97.32,Rise on Chauncey,Apartment - Utilities bill,Others,Credit
+"Wed, 23 Jul 2025",$6.85,Delanie’s Coffee,Matcha,Food,Credit
+"Wed, 23 Jul 2025",$24.51,Zipcar,Car rental,Travel,Chase
+"Wed, 23 Jul 2025",$14.66,Patel Brothers,Groceries,Home,Credit
+"Wed, 23 Jul 2025",$1.14,Aldi,Bread,Home,Chase
+"Wed, 23 Jul 2025",$86.36,T-Mobile,Monthly Bill - MiFi,Essentials,Credit
+"Thu, 24 Jul 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Thu, 24 Jul 2025",$6.96,Press House Coffee,Matcha,Food,Credit
+"Thu, 24 Jul 2025",$6.96,Press House Coffee,Matcha,Food,Credit
+"Thu, 24 Jul 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Thu, 24 Jul 2025",$1.65,Scotty’s,Lays,Food,Chase
+"Fri, 25 Jul 2025",$3.22,Aldi,"Ice cream, Wafer sticks",Home,Credit
+"Sat, 26 Jul 2025",$16.54,T-Mobile,Monthly Bill - Mobile,Essentials,Credit
+"Sat, 26 Jul 2025",$20.50,Senyai Thai,Fried rice,Food,Credit
+"Sat, 26 Jul 2025",$12.89,Lyft,Cab - bus stop to theatre,Travel,Chase
+"Sat, 26 Jul 2025",$1.81,Monroeville Mall,Water bottle,Food,Credit
+"Sat, 26 Jul 2025",$6.25,Cinemark,Movie - Maareesan,Personal,Credit
+"Sat, 26 Jul 2025",$8.00,Patel Brothers,"Vada Pav, Puffs",Food,Credit
+"Sun, 27 Jul 2025",$4.84,Tamarind,Biriyani,Food,Credit
+"Mon, 28 Jul 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Mon, 28 Jul 2025",$6.37,Starbucks,Summer Berry Refresher,Food,Starbucks
+"Mon, 28 Jul 2025",$6.15,Starbucks,For Dyanu - Strato Frap,Personal,Starbucks
+"Mon, 28 Jul 2025",$9.00,Old Navy,Clothes,Personal,Credit
+"Mon, 28 Jul 2025",$1.76,Aldi,Groceries,Home,Credit
+"Wed, 30 Jul 2025",$3.86,Aldi,Groceries,Home,Credit
+"Wed, 30 Jul 2025",$3.29,5801 Video Lounge & Bar,Fries,Food,Credit
+"Thu, 31 Jul 2025",$3.28,Jeni’s Splendid Ice Creams,Ice cream,Food,Chase
+"Fri, 1 Aug 2025",$126.68,United Health Care,Health Insurance,Essentials,Chase
+"Fri, 1 Aug 2025",$0.99,Hulu,Monthly Subscription - Hulu,Essentials,Chase
+"Sat, 2 Aug 2025",$16.78,Taste of India,"Biriyani, Naan",Food,Credit
+"Sun, 3 Aug 2025",$0.70,Bombay Food Market,Groceries,Home,Chase
+"Sun, 3 Aug 2025",$11.86,Aldi,Groceries,Home,Credit
+"Mon, 4 Aug 2025",$21.39,FedEx,Laptop parcel,Others,Credit
+"Tue, 5 Aug 2025",$6.69,Tous Les Jours,Matcha,Food,Credit
+"Tue, 5 Aug 2025",$4.55,Tous Les Jours,Croissant,Food,Credit
+"Tue, 5 Aug 2025",$13.52,Target,"Oil, Cheese, Salad",Home,Credit
+"Tue, 5 Aug 2025",$46.85,T-Mobile,Monthly Bill - MiFi,Essentials,Credit
+"Wed, 6 Aug 2025",$3.00,Giant Eagle,Tiramisu,Food,Chase
+"Thu, 7 Aug 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Thu, 7 Aug 2025",$9.49,Mediterra Cafe,"Croissant, Lemonade",Food,Credit
+"Thu, 7 Aug 2025",$17.65,Forma Pasta,Pasta,Food,Credit
+"Thu, 7 Aug 2025",$5.62,Coffee Village,Iced chai,Food,Credit
+"Thu, 7 Aug 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Thu, 7 Aug 2025",$10.97,Trader Joe’s,Groceries,Home,Chase
+"Thu, 7 Aug 2025",$2.49,Aldi,Groceries,Home,Credit
+"Sat, 9 Aug 2025",$7.34,Allianz Travel,Car insurance,Travel,Chase
+"Sat, 9 Aug 2025",$16.09,Avis Car Rental,Car rental,Travel,Credit
+"Sat, 9 Aug 2025",$0.89,Aldi,Chips,Food,Chase
+"Sat, 9 Aug 2025",$3.71,Tanger’s Food Court,Donut,Food,Credit
+"Sat, 9 Aug 2025",$5.45,Paper People Coffee,Sandwich,Food,Credit
+"Sat, 9 Aug 2025",$8.98,Levi’s,T-shirts,Personal,Chase
+"Sat, 9 Aug 2025",$6.31,Bath & Body Works,Body cream,Personal,Credit
+"Sat, 9 Aug 2025",$10.49,Chick-fil-A,Burger meal,Food,Credit
+"Sat, 9 Aug 2025",$12.50,Adidas,Slides,Personal,Credit
+"Sat, 9 Aug 2025",$14.47,Patel Brothers,Groceries,Home,Credit
+"Sat, 9 Aug 2025",$10.66,Mintt,Indian food,Food,Credit
+"Sun, 10 Aug 2025",$6.01,McDonald’s,"Hash brown, Pancake",Food,Credit
+"Sun, 10 Aug 2025",$8.81,Gas station,Gas,Travel,Chase
+"Tue, 12 Aug 2025",$21.39,LinkedIn,LinkedIn Premium,Essentials,BofA
+"Wed, 13 Aug 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Wed, 13 Aug 2025",$30.00,Cinemark,Movie - Coolie,Personal,Chase
+"Wed, 13 Aug 2025",$9.00,Uber,Cab - theatre to home,Travel,Chase
+"Thu, 14 Aug 2025",$90.00,Agoda,Hotel - Microtel Niagara Falls,Travel,Chase
+"Fri, 15 Aug 2025",$11.00,Allianz Travel,Car insurance,Travel,Credit
+"Fri, 15 Aug 2025",$48.25,Avis Car Rental,Car rental,Travel,Credit
+"Fri, 15 Aug 2025",$2.39,Tim Hortons,"Timbits, Donut",Food,Credit
+"Fri, 15 Aug 2025",$16.19,Mandalay Restaurant,Thai food,Food,Credit
+"Fri, 15 Aug 2025",$30.25,Niagara Falls,Maid of the Mist,Travel,Chase
+"Fri, 15 Aug 2025",$3.40,Niagara Falls,Ice cream,Food,Credit
+"Fri, 15 Aug 2025",$20.00,Niagara Falls,Parking,Travel,Credit
+"Sat, 16 Aug 2025",$4.35,Amma’s Kitchen,"Rose Milk, Butter Milk",Food,Credit
+"Sat, 16 Aug 2025",$9.51,Tandoori Hut,Biriyani,Food,Credit
+"Sat, 16 Aug 2025",$12.62,Gas station,Gas,Travel,Chase
+"Sat, 16 Aug 2025",$4.19,Starbucks,Falafel pocket,Food,Starbucks
+"Sun, 17 Aug 2025",$9.51,Gas station,Gas,Travel,Chase
+"Sun, 17 Aug 2025",$3.85,Avis Car Rental,Tolls,Travel,Credit
+"Sun, 17 Aug 2025",$2.73,Avis Car Rental,Tolls,Travel,Credit
+"Mon, 18 Aug 2025",$6.43,Aldi,Groceries,Home,Credit
+"Mon, 18 Aug 2025",$3.34,Bombay Food Market,Groceries,Home,Chase
+"Mon, 18 Aug 2025",$7.48,Domino’s,Pizza,Food,Credit
+"Mon, 18 Aug 2025",$8.57,Trader Joe’s,Snacks,Food,Credit
+"Wed, 20 Aug 2025",$5.83,Starbucks,Matcha,Food,Starbucks
+"Wed, 20 Aug 2025",$5.83,Starbucks,For Dyanu - Iced Mocha,Personal,Starbucks
+"Wed, 20 Aug 2025",$7.38,5801 Video Lounge & Bar,Fries,Food,Credit
+"Thu, 21 Aug 2025",$51.50,Lark,Lease Application Fee,Home,Credit
+"Fri, 22 Aug 2025",$2.99,Apple,Monthly Bill - iCloud,Essentials,BofA
+"Fri, 22 Aug 2025",$5.99,Apple,Monthly Subscription - Apple Music,Essentials,BofA
+"Sat, 23 Aug 2025",$51.50,Rise on Chauncey,Move-out Fee,Home,Credit
+"Sat, 23 Aug 2025",$10.00,Costco,"Coconut water, Chocolate mousse",Home,Credit
+"Sat, 23 Aug 2025",$2.49,Costco,Cookie,Food,Chase
+"Sat, 23 Aug 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Sat, 23 Aug 2025",$24.22,People’s Indian Restaurant,Indian food,Food,Credit
+"Mon, 25 Aug 2025",$1823.00,Lark,Lease Deposit,Home,Chase
+"Mon, 25 Aug 2025",$14.40,Cafe Moulin,Crêpes,Food,Credit
+"Mon, 25 Aug 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Mon, 25 Aug 2025",$18.65,Target,Groceries,Home,Chase
+"Mon, 25 Aug 2025",$4.23,Starbucks,Falafel pocket,Food,Starbucks
+"Mon, 25 Aug 2025",$3.85,Aldi,Groceries,Home,Credit
+"Mon, 25 Aug 2025",$1.05,Giant Eagle,Onion,Home,Credit
+"Tue, 26 Aug 2025",$9.21,Shibam Coffee,Matcha,Food,Credit
+"Tue, 26 Aug 2025",$2.09,Starbucks,Almond Biscotti,Food,Starbucks
+"Tue, 26 Aug 2025",$16.54,T-Mobile,Monthly Bill - Mobile,Essentials,Credit
+"Wed, 27 Aug 2025",$40.00,DHL,Electricity,Home,Chase
+"Thu, 28 Aug 2025",$9.21,Shibam Coffee,Matcha,Food,Credit
+"Thu, 28 Aug 2025",$321.18,Chase Travel,Flight - PIT to LAF,Travel,Credit
+"Thu, 28 Aug 2025",$10.69,Tamarind,Dosa,Food,Credit
+"Thu, 28 Aug 2025",$5.35,Shibam Coffee,Iced tea,Food,Credit
+"Fri, 29 Aug 2025",$2.75,PRT,Bus ticket,Travel,Chase
+"Fri, 29 Aug 2025",$0.00,Royal Mezbaan,Lunch buffet,Food,Cash
+"Fri, 29 Aug 2025",$3.30,Aldi,Groceries,Home,Credit
+"Fri, 29 Aug 2025",$2.50,Patel Brothers,Vada Pav,Food,Chase
