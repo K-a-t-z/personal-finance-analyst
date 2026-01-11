@@ -195,3 +195,130 @@ def get_source_breakdown(db: Session, month: str) -> List[Dict[str, Any]]:
             })
     
     return breakdown
+
+
+def get_category_total(db: Session, month: str, category: str) -> Dict[str, Any]:
+    """
+    Get expense total and count for a specific category in a given month.
+    
+    Args:
+        db: SQLAlchemy database session
+        month: Month in "YYYY-MM" format
+        category: Category name to filter by
+        
+    Returns:
+        Dictionary with 'expense_total' (Decimal) and 'count' (int)
+    """
+    _validate_month(month)
+    
+    # Expense total for category (amount > 0)
+    expense_total = db.query(func.sum(Transaction.amount)).filter(
+        and_(
+            Transaction.year_month == month,
+            Transaction.amount > 0,
+            Transaction.category == category
+        )
+    ).scalar() or Decimal("0.00")
+    
+    # Transaction count for category
+    count = db.query(Transaction).filter(
+        and_(
+            Transaction.year_month == month,
+            Transaction.amount > 0,
+            Transaction.category == category
+        )
+    ).count()
+    
+    # Quantize to 2 decimal places
+    expense_total = Decimal(expense_total).quantize(Decimal("0.01"))
+    
+    return {
+        "expense_total": expense_total,
+        "count": count
+    }
+
+
+def get_merchant_total(db: Session, month: str, merchant: str) -> Dict[str, Any]:
+    """
+    Get expense total and count for a specific merchant in a given month.
+    Uses case-insensitive matching on the where_ field.
+    
+    Args:
+        db: SQLAlchemy database session
+        month: Month in "YYYY-MM" format
+        merchant: Merchant name to filter by (case-insensitive)
+        
+    Returns:
+        Dictionary with 'expense_total' (Decimal) and 'count' (int)
+    """
+    _validate_month(month)
+    
+    # Convert merchant to lowercase for case-insensitive matching
+    merchant_lower = merchant.lower()
+    
+    # Expense total for merchant (amount > 0, case-insensitive match)
+    expense_total = db.query(func.sum(Transaction.amount)).filter(
+        and_(
+            Transaction.year_month == month,
+            Transaction.amount > 0,
+            func.lower(Transaction.where_) == merchant_lower
+        )
+    ).scalar() or Decimal("0.00")
+    
+    # Transaction count for merchant
+    count = db.query(Transaction).filter(
+        and_(
+            Transaction.year_month == month,
+            Transaction.amount > 0,
+            func.lower(Transaction.where_) == merchant_lower
+        )
+    ).count()
+    
+    # Quantize to 2 decimal places
+    expense_total = Decimal(expense_total).quantize(Decimal("0.01"))
+    
+    return {
+        "expense_total": expense_total,
+        "count": count
+    }
+
+
+def get_source_total(db: Session, month: str, source: str) -> Dict[str, Any]:
+    """
+    Get expense total and count for a specific source in a given month.
+    
+    Args:
+        db: SQLAlchemy database session
+        month: Month in "YYYY-MM" format
+        source: Source name to filter by
+        
+    Returns:
+        Dictionary with 'expense_total' (Decimal) and 'count' (int)
+    """
+    _validate_month(month)
+    
+    # Expense total for source (amount > 0)
+    expense_total = db.query(func.sum(Transaction.amount)).filter(
+        and_(
+            Transaction.year_month == month,
+            Transaction.amount > 0,
+            Transaction.source == source
+        )
+    ).scalar() or Decimal("0.00")
+    
+    # Transaction count for source
+    count = db.query(Transaction).filter(
+        and_(
+            Transaction.year_month == month,
+            Transaction.amount > 0,
+            Transaction.source == source
+        )
+    ).count()
+    
+    # Quantize to 2 decimal places
+    expense_total = Decimal(expense_total).quantize(Decimal("0.01"))
+    
+    return {
+        "expense_total": expense_total,
+        "count": count
+    }
