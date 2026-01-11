@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from app.core.config import get_settings
 from app.core.db import Base, engine
-from app.api.routes import ingest
+from app.api.routes import ingest, summary
 
 settings = get_settings()
 
@@ -22,3 +22,4 @@ async def health():
 
 
 app.include_router(ingest.router, prefix="", tags=["ingest"])
+app.include_router(summary.router, prefix="", tags=["summary"])
