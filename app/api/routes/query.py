@@ -1,4 +1,4 @@
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 from decimal import Decimal
 from fastapi import APIRouter, Depends
 from sqlalchemy import func, distinct
@@ -48,6 +48,29 @@ def _format_amount(amount: Decimal) -> str:
     return f"${amount:,.2f}"
 
 
+def format_spend_phrase(intent: str, entity_value: Optional[str] = None) -> str:
+    """
+    Format the spend phrase based on intent and entity value.
+    
+    Args:
+        intent: Intent type (category_total, merchant_total, source_total, monthly_summary)
+        entity_value: The entity value (category name, merchant name, source name)
+        
+    Returns:
+        Phrase string like "on {category}", "at {merchant}", "using {source}", or "" for monthly_summary
+    """
+    if intent == "category_total" and entity_value:
+        return f"on {entity_value}"
+    elif intent == "merchant_total" and entity_value:
+        return f"at {entity_value}"
+    elif intent == "source_total" and entity_value:
+        return f"using {entity_value}"
+    elif intent == "monthly_summary":
+        return ""
+    else:
+        return ""
+
+
 @router.post("/query")
 async def query_finance(
     request: QueryRequest,
@@ -67,15 +90,26 @@ async def query_finance(
         "intent": None,
         "resolved_month": None,
         "called_functions": [],
-        "parameters": {}
+        "parameters": {},
+        "filters_used": {},
+        "evidence_count_returned": 0,
+        "notes": []
     }
     
     # Step 1: Determine month
     month = request.month
-    if not month:
+    month_source = None
+    if month:
+        month_source = "request"
+        trace["notes"].append("Month provided in request")
+    else:
         month = extract_month(request.question)
+        if month:
+            month_source = "extracted"
+            trace["notes"].append("Month extracted from question")
     
     if not month:
+        trace["intent"] = "unknown"
         return QueryResponse(
             clarifying_question="Please specify a month in YYYY-MM format (e.g., 2025-05).",
             evidence=[],
@@ -97,10 +131,11 @@ async def query_finance(
     
     # Step 4: Handle based on intent
     result_data: Dict[str, Any] = {}
-    evidence_filters: Dict[str, Any] = {}
+    evidence_filters: Dict[str, Any] = {"kind": "expense"}  # Default to expense (month is passed separately)
     clarifying_question: str | None = None
     final_answer: str | None = None
     numbers: Dict[str, Any] | None = None
+    entity_source: Optional[str] = None
     
     try:
         if intent == "monthly_summary":
@@ -113,6 +148,7 @@ async def query_finance(
                 "net_total": str(totals["net_total"]),
                 "transaction_count": totals["transaction_count"]
             }
+            spend_phrase = format_spend_phrase(intent, None)
             final_answer = (
                 f"In {month}, you spent {_format_amount(totals['expense_total'])} "
                 f"across {totals['transaction_count']} transactions. "
@@ -123,9 +159,12 @@ async def query_finance(
             category = extract_category(request.question, known_categories)
             if not category:
                 clarifying_question = "Which category are you interested in? (e.g., Food, Travel, Essentials)"
+                trace["notes"].append("Category could not be extracted from question")
             else:
+                entity_source = "extracted"
                 trace["called_functions"].append("get_category_total")
                 trace["parameters"]["category"] = category
+                trace["notes"].append("Category extracted from question")
                 result = get_category_total(db, month, category)
                 result_data = result
                 evidence_filters["category"] = category
@@ -133,18 +172,22 @@ async def query_finance(
                     "expense_total": str(result["expense_total"]),
                     "count": result["count"]
                 }
+                spend_phrase = format_spend_phrase(intent, category)
                 final_answer = (
                     f"You spent {_format_amount(result['expense_total'])} "
-                    f"on {category} in {month} across {result['count']} transactions."
+                    f"{spend_phrase} in {month} across {result['count']} transactions."
                 )
         
         elif intent == "merchant_total":
-            merchant = extract_merchant(request.question)
+            merchant = extract_merchant(request.question, known_categories)
             if not merchant:
                 clarifying_question = "Which merchant or store are you asking about? (e.g., 'at Target' or 'Uber')"
+                trace["notes"].append("Merchant could not be extracted from question")
             else:
+                entity_source = "extracted"
                 trace["called_functions"].append("get_merchant_total")
                 trace["parameters"]["merchant"] = merchant
+                trace["notes"].append("Merchant extracted from question")
                 result = get_merchant_total(db, month, merchant)
                 result_data = result
                 evidence_filters["merchant"] = merchant
@@ -152,18 +195,22 @@ async def query_finance(
                     "expense_total": str(result["expense_total"]),
                     "count": result["count"]
                 }
+                spend_phrase = format_spend_phrase(intent, merchant)
                 final_answer = (
                     f"You spent {_format_amount(result['expense_total'])} "
-                    f"at {merchant} in {month} across {result['count']} transactions."
+                    f"{spend_phrase} in {month} across {result['count']} transactions."
                 )
         
         elif intent == "source_total":
             source = extract_source(request.question, known_sources)
             if not source:
                 clarifying_question = "Which source are you interested in? Please specify the payment source."
+                trace["notes"].append("Source could not be extracted from question")
             else:
+                entity_source = "extracted"
                 trace["called_functions"].append("get_source_total")
                 trace["parameters"]["source"] = source
+                trace["notes"].append("Source extracted from question")
                 result = get_source_total(db, month, source)
                 result_data = result
                 evidence_filters["source"] = source
@@ -171,9 +218,10 @@ async def query_finance(
                     "expense_total": str(result["expense_total"]),
                     "count": result["count"]
                 }
+                spend_phrase = format_spend_phrase(intent, source)
                 final_answer = (
                     f"You spent {_format_amount(result['expense_total'])} "
-                    f"using {source} in {month} across {result['count']} transactions."
+                    f"{spend_phrase} in {month} across {result['count']} transactions."
                 )
         
         elif intent == "top_merchants":
@@ -221,7 +269,12 @@ async def query_finance(
     evidence_rows_data = get_evidence_rows(db, month, evidence_filters, request.limit_evidence)
     evidence = [EvidenceRow(**row) for row in evidence_rows_data]
     
-    # Step 6: Build response
+    # Step 6: Update trace with filters_used and evidence_count
+    # filters_used should match evidence_filters exactly, but also include month
+    trace["filters_used"] = {"month": month, **evidence_filters}
+    trace["evidence_count_returned"] = len(evidence)
+    
+    # Step 7: Build response
     return QueryResponse(
         final_answer=final_answer,
         clarifying_question=clarifying_question,

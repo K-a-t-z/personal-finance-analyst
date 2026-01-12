@@ -1,5 +1,5 @@
 from typing import Dict, List, Any, Optional
-from sqlalchemy import and_, func
+from sqlalchemy import and_
 from sqlalchemy.orm import Session
 
 from app.core.models import Transaction
@@ -17,17 +17,18 @@ def get_evidence_rows(
     
     Args:
         db: SQLAlchemy database session
-        month: Month in "YYYY-MM" format
+        month: Month in "YYYY-MM" format (required)
         filters: Dictionary that may include:
-            - category: Filter by category name
-            - source: Filter by source name
-            - merchant: Filter by where_ field (case-insensitive)
+            - kind: "expense" (amount > 0) or "income" (amount < 0), defaults to "expense"
+            - category: Filter by category name (exact match, case-sensitive)
+            - merchant: Filter by where_ field (exact match, case-sensitive)
+            - source: Filter by source name (exact match, case-sensitive)
         limit: Maximum number of rows to return
         
     Returns:
         List of dictionaries with transaction_id, date, where, what, amount,
-        category, source. Ordered by abs_amount descending.
-        Returns empty list if no results or invalid month.
+        category, source. Ordered by abs_amount descending, then date descending.
+        Returns empty list if no results, invalid month, or filters don't match.
     """
     # Validate month format
     try:
@@ -35,15 +36,25 @@ def get_evidence_rows(
     except ValueError:
         return []
     
+    # Determine amount filter based on kind
+    kind = filters.get("kind", "expense")
+    if kind == "expense":
+        amount_filter = Transaction.amount > 0
+    elif kind == "income":
+        amount_filter = Transaction.amount < 0
+    else:
+        # Default to expense if invalid kind
+        amount_filter = Transaction.amount > 0
+    
     # Start building the query
     query = db.query(Transaction).filter(
         and_(
             Transaction.year_month == month,
-            Transaction.amount > 0  # Only expenses for spend questions
+            amount_filter
         )
     )
     
-    # Apply filters
+    # Apply filters (exact match, case-sensitive)
     if "category" in filters and filters["category"] is not None:
         query = query.filter(Transaction.category == filters["category"])
     
@@ -51,12 +62,11 @@ def get_evidence_rows(
         query = query.filter(Transaction.source == filters["source"])
     
     if "merchant" in filters and filters["merchant"] is not None:
-        # Case-insensitive matching for merchant (where_ field)
-        merchant_lower = filters["merchant"].lower()
-        query = query.filter(func.lower(Transaction.where_) == merchant_lower)
+        # Exact match, case-sensitive for merchant (where_ field)
+        query = query.filter(Transaction.where_ == filters["merchant"])
     
-    # Order by abs_amount descending and limit
-    query = query.order_by(Transaction.abs_amount.desc()).limit(limit)
+    # Order by abs_amount descending, then date descending
+    query = query.order_by(Transaction.abs_amount.desc(), Transaction.date.desc()).limit(limit)
     
     # Execute query and build result list
     transactions = query.all()
