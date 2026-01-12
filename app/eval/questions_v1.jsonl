@@ -1,0 +1,30 @@
+{"id": "q01", "question": "What was my total expense in June 2025?", "month": "2025-06", "expect": {"type": "monthly_summary"}}
+{"id": "q02", "question": "How much did I spend in 2025-06?", "month": "2025-06", "expect": {"type": "monthly_summary"}}
+{"id": "q03", "question": "What was my net total in 2025-06?", "month": "2025-06", "expect": {"type": "monthly_summary"}}
+{"id": "q04", "question": "How much did I spend on Food in 2025-06?", "month": "2025-06", "expect": {"type": "category_total", "category": "Food"}}
+{"id": "q05", "question": "How much did I spend on Travel in June 2025?", "month": "2025-06", "expect": {"type": "category_total", "category": "Travel"}}
+{"id": "q06", "question": "What did I spend on Essentials in 2025-06?", "month": "2025-06", "expect": {"type": "category_total", "category": "Essentials"}}
+{"id": "q07", "question": "How much did I spend on Personal in 2025-06?", "month": "2025-06", "expect": {"type": "category_total", "category": "Personal"}}
+{"id": "q08", "question": "How much did I spend on Home in 2025-06?", "month": "2025-06", "expect": {"type": "category_total", "category": "Home"}}
+{"id": "q09", "question": "How much did I spend at Uber in 2025-06?", "month": "2025-06", "expect": {"type": "merchant_total", "merchant": "Uber"}}
+{"id": "q10", "question": "What did I spend at Target in June 2025?", "month": "2025-06", "expect": {"type": "merchant_total", "merchant": "Target"}}
+{"id": "q11", "question": "How much did I spend on Amazon in 2025-06?", "month": "2025-06", "expect": {"type": "merchant_total", "merchant": "Amazon"}}
+{"id": "q12", "question": "How much did I spend using Cash in 2025-06?", "month": "2025-06", "expect": {"type": "source_total", "source": "Cash"}}
+{"id": "q13", "question": "How much did I spend via Chase in June 2025?", "month": "2025-06", "expect": {"type": "source_total", "source": "Chase"}}
+{"id": "q14", "question": "What are my top 5 merchants by spending in 2025-06?", "month": "2025-06", "expect": {"type": "top_merchants", "k": 5}}
+{"id": "q15", "question": "Show me top merchants in 2025-06", "month": "2025-06", "expect": {"type": "top_merchants"}}
+{"id": "q16", "question": "Give me a category breakdown for 2025-06", "month": "2025-06", "expect": {"type": "category_breakdown"}}
+{"id": "q17", "question": "What's the category breakdown for June 2025?", "month": "2025-06", "expect": {"type": "category_breakdown"}}
+{"id": "q18", "question": "Give a source breakdown for 2025-06", "month": "2025-06", "expect": {"type": "source_breakdown"}}
+{"id": "q19", "question": "What's the source breakdown in June 2025?", "month": "2025-06", "expect": {"type": "source_breakdown"}}
+{"id": "q20", "question": "How much did I spend?", "expect": {"type": "clarify_month"}}
+{"id": "q21", "question": "What was my total expense?", "expect": {"type": "clarify_month"}}
+{"id": "q22", "question": "How much did I spend on Food?", "expect": {"type": "clarify_month"}}
+{"id": "q23", "question": "How much did I spend in 2025-06?", "month": "2025-06", "expect": {"type": "monthly_summary"}}
+{"id": "q24", "question": "Which category did I spend the most on in 2025-06?", "month": "2025-06", "expect": {"type": "category_breakdown"}}
+{"id": "q25", "question": "How much did I spend on category Food in 2025-06?", "month": "2025-06", "expect": {"type": "category_total", "category": "Food"}}
+{"id": "q26", "question": "What did I spend at 'Starbucks' in 2025-06?", "month": "2025-06", "expect": {"type": "merchant_total", "merchant": "Starbucks"}}
+{"id": "q27", "question": "How much did I spend on category?", "expect": {"type": "clarify_entity"}}
+{"id": "q28", "question": "What did I spend at?", "expect": {"type": "clarify_entity"}}
+{"id": "q29", "question": "How much did I spend using source?", "expect": {"type": "clarify_entity"}}
+{"id": "q30", "question": "What's the weather today?", "expect": {"type": "unknown"}}

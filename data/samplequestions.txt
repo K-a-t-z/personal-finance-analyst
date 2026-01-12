@@ -1,0 +1,46 @@
+Sample Test Questions:
+
+I. Monthly totals
+
+1.  What was my total expense in June 2025?
+2.  What was my total income/settlements in June 2025 (negative amounts)?
+3.  What was my net (income + expenses) in June 2025?
+4.  How many transactions did I have in June 2025?
+5.  What was my average expense transaction in June 2025?
+6.  What were my top 3 highest expenses in June 2025?
+7.  What were my top 3 income/settlement entries in June 2025?
+8.  What day in June 2025 had the highest total spending?
+
+II. Category analysis
+
+9.  How much did I spend on Food in June 2025?
+10. How much did I spend on Travel in June 2025?
+11. How much did I spend on Essentials in June 2025?
+12. How much did I spend on Personal in June 2025?
+13. How much did I spend on Home in June 2025?
+14. How much did I spend on Others in June 2025?
+15. Which category did I spend the most on in June 2025, and how much?
+16. Give me a category breakdown for June 2025 (totals + % share).
+
+III. Merchant analysis
+
+17. How much did I spend at Uber in June 2025?
+18. What are my top 5 merchants by spending in June 2025?
+19. For my top merchant in June 2025, how many transactions did I have and what's the total?
+20. Which merchant had the largest single expense in June 2025?
+21. Show all transactions where "Where?" = Uber in June 2025 (evidence rows).
+22. Which merchant's spending increased the most from June 2025 to August 2025?
+
+IV. Source analysis
+
+23. How much did I spend using Cash in June 2025?
+24. How much did I spend via Chase in June 2025?
+25. Which Source accounts for the highest spending in June 2025?
+26. Give a source breakdown for June 2025.
+
+V. Comparison + edge cases
+
+27. Compare Food spending in Apr 2025 vs May 2025. (If Apr exists; otherwise refuse)
+28. Compare total spending in the first half vs second half of June 2025.
+29. How much did I spend last month? (Should ask for clarification or define “last month” relative to dataset – better: ask)
+30. What was my rent in Aug 2025? (If rent isn’t explicitly identifiable, should refuse or ask how to identify rent)

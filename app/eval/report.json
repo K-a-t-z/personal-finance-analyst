@@ -1,0 +1,3257 @@
+{
+  "summary": {
+    "total": 30,
+    "passed": 25,
+    "failed": 5,
+    "pass_rate": 83.33333333333334,
+    "trace_compliance_rate": 100.0,
+    "evidence_compliance_rate": 100.0,
+    "numeric_accuracy_rate": 75.0,
+    "clarification_correctness_rate": 100.0
+  },
+  "results": [
+    {
+      "id": "q01",
+      "question": "What was my total expense in June 2025?",
+      "month": "2025-06",
+      "expect": {
+        "type": "monthly_summary"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Which merchant or store are you asking about? (e.g., 'at Target' or 'Uber')",
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "merchant_total",
+          "resolved_month": "2025-06",
+          "called_functions": [],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request",
+            "Merchant could not be extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": false,
+          "message": "intent mismatch: expected monthly_summary, got merchant_total"
+        },
+        "numeric_correctness": {
+          "passed": false,
+          "message": "no numbers in response"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "q02",
+      "question": "How much did I spend in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "monthly_summary"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "In 2025-06, you spent $871.50 across 10 transactions. Net total: $871.50.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "871.50",
+          "income_total": "0.00",
+          "net_total": "871.50",
+          "transaction_count": 10
+        },
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "monthly_summary",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_monthly_totals"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q03",
+      "question": "What was my net total in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "monthly_summary"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Which merchant or store are you asking about? (e.g., 'at Target' or 'Uber')",
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "merchant_total",
+          "resolved_month": "2025-06",
+          "called_functions": [],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request",
+            "Merchant could not be extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": false,
+          "message": "intent mismatch: expected monthly_summary, got merchant_total"
+        },
+        "numeric_correctness": {
+          "passed": false,
+          "message": "no numbers in response"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "q04",
+      "question": "How much did I spend on Food in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_total",
+        "category": "Food"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $129.00 on Food in 2025-06 across 4 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "129.00",
+          "count": 4
+        },
+        "evidence": [
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "category_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "category": "Food"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "category": "Food"
+          },
+          "evidence_count_returned": 4,
+          "notes": [
+            "Month provided in request",
+            "Category extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q05",
+      "question": "How much did I spend on Travel in June 2025?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_total",
+        "category": "Travel"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $337.50 on Travel in 2025-06 across 3 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "337.50",
+          "count": 3
+        },
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "category_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "category": "Travel"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "category": "Travel"
+          },
+          "evidence_count_returned": 3,
+          "notes": [
+            "Month provided in request",
+            "Category extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q06",
+      "question": "What did I spend on Essentials in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_total",
+        "category": "Essentials"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $85.00 on Essentials in 2025-06 across 1 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "85.00",
+          "count": 1
+        },
+        "evidence": [
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "category_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "category": "Essentials"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "category": "Essentials"
+          },
+          "evidence_count_returned": 1,
+          "notes": [
+            "Month provided in request",
+            "Category extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q07",
+      "question": "How much did I spend on Personal in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_total",
+        "category": "Personal"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $200.00 on Personal in 2025-06 across 1 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "200.00",
+          "count": 1
+        },
+        "evidence": [
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          }
+        ],
+        "trace": {
+          "intent": "category_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "category": "Personal"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "category": "Personal"
+          },
+          "evidence_count_returned": 1,
+          "notes": [
+            "Month provided in request",
+            "Category extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q08",
+      "question": "How much did I spend on Home in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_total",
+        "category": "Home"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $120.00 on Home in 2025-06 across 1 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "120.00",
+          "count": 1
+        },
+        "evidence": [
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          }
+        ],
+        "trace": {
+          "intent": "category_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "category": "Home"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "category": "Home"
+          },
+          "evidence_count_returned": 1,
+          "notes": [
+            "Month provided in request",
+            "Category extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q09",
+      "question": "How much did I spend at Uber in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "merchant_total",
+        "merchant": "Uber"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $37.50 at Uber in 2025-06 across 2 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "37.50",
+          "count": 2
+        },
+        "evidence": [
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "merchant_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_merchant_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "merchant": "Uber"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "merchant": "Uber"
+          },
+          "evidence_count_returned": 2,
+          "notes": [
+            "Month provided in request",
+            "Merchant extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q10",
+      "question": "What did I spend at Target in June 2025?",
+      "month": "2025-06",
+      "expect": {
+        "type": "merchant_total",
+        "merchant": "Target"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $85.00 at Target in 2025-06 across 1 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "85.00",
+          "count": 1
+        },
+        "evidence": [
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "merchant_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_merchant_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "merchant": "Target"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "merchant": "Target"
+          },
+          "evidence_count_returned": 1,
+          "notes": [
+            "Month provided in request",
+            "Merchant extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q11",
+      "question": "How much did I spend on Amazon in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "merchant_total",
+        "merchant": "Amazon"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $120.00 at Amazon in 2025-06 across 1 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "120.00",
+          "count": 1
+        },
+        "evidence": [
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          }
+        ],
+        "trace": {
+          "intent": "merchant_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_merchant_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "merchant": "Amazon"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "merchant": "Amazon"
+          },
+          "evidence_count_returned": 1,
+          "notes": [
+            "Month provided in request",
+            "Merchant extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q12",
+      "question": "How much did I spend using Cash in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "source_total",
+        "source": "Cash"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "In 2025-06, you spent $871.50 across 10 transactions. Net total: $871.50.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "871.50",
+          "income_total": "0.00",
+          "net_total": "871.50",
+          "transaction_count": 10
+        },
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "monthly_summary",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_monthly_totals"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": false,
+          "message": "intent mismatch: expected source_total, got monthly_summary"
+        },
+        "numeric_correctness": {
+          "passed": false,
+          "message": "expense_total mismatch: expected 75.00, got 871.50"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "q13",
+      "question": "How much did I spend via Chase in June 2025?",
+      "month": "2025-06",
+      "expect": {
+        "type": "source_total",
+        "source": "Chase"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "I can help you with questions about your spending. Supported question types include: monthly summaries, category totals, merchant totals, source totals, top merchants, and category/source breakdowns. Please rephrase your question with a specific month (YYYY-MM format).",
+        "clarifying_question": null,
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": "2025-06",
+          "called_functions": [],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": false,
+          "message": "intent mismatch: expected source_total, got unknown"
+        },
+        "numeric_correctness": {
+          "passed": false,
+          "message": "no numbers in response"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "q14",
+      "question": "What are my top 5 merchants by spending in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "top_merchants",
+        "k": 5
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "Top merchants in 2025-06: Airline ($300.00), Store ($200.00), Amazon ($120.00)",
+        "clarifying_question": null,
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "top_merchants",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_top_merchants"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q15",
+      "question": "Show me top merchants in 2025-06",
+      "month": "2025-06",
+      "expect": {
+        "type": "top_merchants"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "Top merchants in 2025-06: Airline ($300.00), Store ($200.00), Amazon ($120.00)",
+        "clarifying_question": null,
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "top_merchants",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_top_merchants"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q16",
+      "question": "Give me a category breakdown for 2025-06",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_breakdown"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "Category breakdown for 2025-06: Travel: $337.50, Personal: $200.00, Food: $129.00",
+        "clarifying_question": null,
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "category_breakdown",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_breakdown"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q17",
+      "question": "What's the category breakdown for June 2025?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_breakdown"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "Category breakdown for 2025-06: Travel: $337.50, Personal: $200.00, Food: $129.00",
+        "clarifying_question": null,
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "category_breakdown",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_breakdown"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q18",
+      "question": "Give a source breakdown for 2025-06",
+      "month": "2025-06",
+      "expect": {
+        "type": "source_breakdown"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "Source breakdown for 2025-06: Credit Card: $476.50, Chase: $320.00, Cash: $75.00",
+        "clarifying_question": null,
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "source_breakdown",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_source_breakdown"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q19",
+      "question": "What's the source breakdown in June 2025?",
+      "month": "2025-06",
+      "expect": {
+        "type": "source_breakdown"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "Source breakdown for 2025-06: Credit Card: $476.50, Chase: $320.00, Cash: $75.00",
+        "clarifying_question": null,
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "source_breakdown",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_source_breakdown"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q20",
+      "question": "How much did I spend?",
+      "month": null,
+      "expect": {
+        "type": "clarify_month"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Please specify a month in YYYY-MM format (e.g., 2025-05).",
+        "numbers": null,
+        "evidence": [],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": null,
+          "called_functions": [],
+          "parameters": {},
+          "filters_used": {},
+          "evidence_count_returned": 0,
+          "notes": []
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q21",
+      "question": "What was my total expense?",
+      "month": null,
+      "expect": {
+        "type": "clarify_month"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Please specify a month in YYYY-MM format (e.g., 2025-05).",
+        "numbers": null,
+        "evidence": [],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": null,
+          "called_functions": [],
+          "parameters": {},
+          "filters_used": {},
+          "evidence_count_returned": 0,
+          "notes": []
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q22",
+      "question": "How much did I spend on Food?",
+      "month": null,
+      "expect": {
+        "type": "clarify_month"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Please specify a month in YYYY-MM format (e.g., 2025-05).",
+        "numbers": null,
+        "evidence": [],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": null,
+          "called_functions": [],
+          "parameters": {},
+          "filters_used": {},
+          "evidence_count_returned": 0,
+          "notes": []
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q23",
+      "question": "How much did I spend in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "monthly_summary"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "In 2025-06, you spent $871.50 across 10 transactions. Net total: $871.50.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "871.50",
+          "income_total": "0.00",
+          "net_total": "871.50",
+          "transaction_count": 10
+        },
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "monthly_summary",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_monthly_totals"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q24",
+      "question": "Which category did I spend the most on in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_breakdown"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Which category are you interested in? (e.g., Food, Travel, Essentials)",
+        "numbers": null,
+        "evidence": [
+          {
+            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "date": "2025-06-15",
+            "where": "Airline",
+            "what": "Flight",
+            "amount": "300.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "date": "2025-06-25",
+            "where": "Store",
+            "what": "Purchase",
+            "amount": "200.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "date": "2025-06-18",
+            "where": "Amazon",
+            "what": "Online Purchase",
+            "amount": "120.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "date": "2025-06-20",
+            "where": "Target",
+            "what": "Shopping",
+            "amount": "85.00",
+            "category": "Essentials",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "22.00",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "date": "2025-06-08",
+            "where": "Uber",
+            "what": "Ride",
+            "amount": "15.50",
+            "category": "Travel",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "category_total",
+          "resolved_month": "2025-06",
+          "called_functions": [],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request",
+            "Category could not be extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": false,
+          "message": "intent mismatch: expected category_breakdown, got category_total"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "q25",
+      "question": "How much did I spend on category Food in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "category_total",
+        "category": "Food"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $129.00 on Food in 2025-06 across 4 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "129.00",
+          "count": 4
+        },
+        "evidence": [
+          {
+            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "date": "2025-06-22",
+            "where": "Coffee Shop",
+            "what": "Coffee",
+            "amount": "50.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "date": "2025-06-05",
+            "where": "Grocery Store",
+            "what": "Groceries",
+            "amount": "45.50",
+            "category": "Food",
+            "source": "Credit Card"
+          },
+          {
+            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "date": "2025-06-10",
+            "where": "Restaurant",
+            "what": "Dinner",
+            "amount": "25.00",
+            "category": "Food",
+            "source": "Cash"
+          },
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "category_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_category_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "category": "Food"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "category": "Food"
+          },
+          "evidence_count_returned": 4,
+          "notes": [
+            "Month provided in request",
+            "Category extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q26",
+      "question": "What did I spend at 'Starbucks' in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "merchant_total",
+        "merchant": "Starbucks"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "You spent $8.50 at Starbucks in 2025-06 across 1 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "8.50",
+          "count": 1
+        },
+        "evidence": [
+          {
+            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "date": "2025-06-28",
+            "where": "Starbucks",
+            "what": "Coffee",
+            "amount": "8.50",
+            "category": "Food",
+            "source": "Credit Card"
+          }
+        ],
+        "trace": {
+          "intent": "merchant_total",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_merchant_total"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "Credit Card",
+              "Cash",
+              "Chase"
+            ],
+            "merchant": "Starbucks"
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense",
+            "merchant": "Starbucks"
+          },
+          "evidence_count_returned": 1,
+          "notes": [
+            "Month provided in request",
+            "Merchant extracted from question"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q27",
+      "question": "How much did I spend on category?",
+      "month": null,
+      "expect": {
+        "type": "clarify_entity"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Please specify a month in YYYY-MM format (e.g., 2025-05).",
+        "numbers": null,
+        "evidence": [],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": null,
+          "called_functions": [],
+          "parameters": {},
+          "filters_used": {},
+          "evidence_count_returned": 0,
+          "notes": []
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q28",
+      "question": "What did I spend at?",
+      "month": null,
+      "expect": {
+        "type": "clarify_entity"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Please specify a month in YYYY-MM format (e.g., 2025-05).",
+        "numbers": null,
+        "evidence": [],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": null,
+          "called_functions": [],
+          "parameters": {},
+          "filters_used": {},
+          "evidence_count_returned": 0,
+          "notes": []
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q29",
+      "question": "How much did I spend using source?",
+      "month": null,
+      "expect": {
+        "type": "clarify_entity"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Please specify a month in YYYY-MM format (e.g., 2025-05).",
+        "numbers": null,
+        "evidence": [],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": null,
+          "called_functions": [],
+          "parameters": {},
+          "filters_used": {},
+          "evidence_count_returned": 0,
+          "notes": []
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q30",
+      "question": "What's the weather today?",
+      "month": null,
+      "expect": {
+        "type": "unknown"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": null,
+        "clarifying_question": "Please specify a month in YYYY-MM format (e.g., 2025-05).",
+        "numbers": null,
+        "evidence": [],
+        "trace": {
+          "intent": "unknown",
+          "resolved_month": null,
+          "called_functions": [],
+          "parameters": {},
+          "filters_used": {},
+          "evidence_count_returned": 0,
+          "notes": []
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    }
+  ]
+}
