@@ -20,7 +20,8 @@ import uuid
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from app.main import app
-from app.core.db import Base, get_db
+from app.core.db import Base, get_db, engine, SessionLocal
+from app.core.config import get_settings
 from app.core.models import Transaction, Ingest
 from app.core.metrics import (
     get_monthly_totals,
@@ -36,18 +37,18 @@ except ImportError:
     HTTPX_AVAILABLE = False
 
 
-def setup_test_database():
+def setup_seeded_database():
     """Set up in-memory SQLite database with sample data."""
-    engine = create_engine(
+    test_engine = create_engine(
         "sqlite://",
         connect_args={"check_same_thread": False},
         poolclass=StaticPool
     )
-    Base.metadata.create_all(bind=engine)
-    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+    Base.metadata.create_all(bind=test_engine)
+    test_session_local = sessionmaker(autocommit=False, autoflush=False, bind=test_engine)
     
     # Seed database with sample transactions
-    session = SessionLocal()
+    session = test_session_local()
     
     # Create an ingest record
     ingest_id = str(uuid.uuid4())
@@ -201,7 +202,7 @@ def setup_test_database():
     
     # Override get_db dependency
     def override_get_db():
-        db = SessionLocal()
+        db = test_session_local()
         try:
             yield db
         finally:
@@ -209,7 +210,41 @@ def setup_test_database():
     
     app.dependency_overrides[get_db] = override_get_db
     
-    return SessionLocal
+    return test_session_local
+
+
+def setup_real_database(db_url: Optional[str] = None):
+    """
+    Set up connection to real database (no seeding).
+    
+    If db_url is provided, override get_db to use that database.
+    Otherwise, use the existing app database without override.
+    """
+    if db_url:
+        # Create a new engine with the provided URL
+        connect_args = {}
+        if db_url.startswith("sqlite"):
+            connect_args = {"check_same_thread": False}
+        
+        real_engine = create_engine(db_url, connect_args=connect_args)
+        real_session_local = sessionmaker(autocommit=False, autoflush=False, bind=real_engine)
+        
+        # Override get_db to use the custom database
+        def override_get_db():
+            db = real_session_local()
+            try:
+                yield db
+            finally:
+                db.close()
+        
+        app.dependency_overrides[get_db] = override_get_db
+    else:
+        # Use the existing app database without override
+        real_session_local = SessionLocal
+    
+    # Do NOT seed data - use existing data
+    
+    return real_session_local
 
 
 def load_questions(jsonl_path: Path) -> List[Dict[str, Any]]:
@@ -372,10 +407,26 @@ def create_remote_client(base_url: str) -> Callable:
     return call_query
 
 
-def create_inprocess_client() -> tuple[Callable, Callable]:
-    """Create a client function for in-process testing using TestClient."""
-    # Setup test database
-    db_session_factory = setup_test_database()
+def create_inprocess_client(db_mode: str = "real", db_url: Optional[str] = None) -> tuple[Callable, Callable, str]:
+    """
+    Create a client function for in-process testing using TestClient.
+    
+    Args:
+        db_mode: "real" or "seeded"
+        db_url: Optional database URL for real mode
+        
+    Returns:
+        Tuple of (call_query function, get_db_session function, data_mode string)
+    """
+    if db_mode == "seeded":
+        # Setup seeded in-memory database
+        db_session_factory = setup_seeded_database()
+        data_mode = "seeded"
+    else:
+        # Setup real database connection
+        db_session_factory = setup_real_database(db_url)
+        data_mode = "real"
+    
     client = TestClient(app)
     
     def call_query(request_data: Dict[str, Any]) -> tuple[Dict[str, Any], int]:
@@ -390,26 +441,51 @@ def create_inprocess_client() -> tuple[Callable, Callable]:
         """Get database session for numeric correctness checks."""
         return db_session_factory()
     
-    return call_query, get_db_session
+    return call_query, get_db_session, data_mode
 
 
-def run_evaluation(base_url: Optional[str] = None, inprocess: bool = True):
-    """Run evaluation against questions_v1.jsonl."""
+def run_evaluation(
+    base_url: Optional[str] = None,
+    inprocess: bool = True,
+    db_mode: str = "real",
+    db_url: Optional[str] = None
+):
+    """
+    Run evaluation against questions_v1.jsonl.
+    
+    Args:
+        base_url: Base URL for remote server (only used in remote mode)
+        inprocess: Whether to run in-process (True) or remote (False)
+        db_mode: "real" or "seeded" (only used in in-process mode)
+        db_url: Optional database URL for real mode
+    """
     # Setup
     eval_dir = Path(__file__).parent
     questions_path = eval_dir / "questions_v1.jsonl"
     report_path = eval_dir / "report.json"
     
+    # Determine data mode
+    data_mode = "real"  # Default for remote mode
+    
     # Choose client mode
     if inprocess:
         print("Running in-process mode (TestClient)...")
-        print("Setting up test database...")
-        call_query, get_db_session = create_inprocess_client()
+        if db_mode == "seeded":
+            print("Database mode: SEEDED (in-memory SQLite with synthetic data)")
+            print("Setting up seeded test database...")
+        else:
+            db_display_url = db_url if db_url else get_settings().database_url
+            print(f"Database mode: REAL (using existing database)")
+            print(f"Database URL: {db_display_url}")
+            print("Note: Using real ingested data, no synthetic seeding")
+        
+        call_query, get_db_session, data_mode = create_inprocess_client(db_mode, db_url)
         db_session_factory = get_db_session
     else:
         if not base_url:
             base_url = "http://127.0.0.1:8000"
         print(f"Running against remote server: {base_url}")
+        print("Database mode: REAL (using server's database)")
         call_query = create_remote_client(base_url)
         # For remote mode, we can't easily get DB session, so skip numeric checks
         db_session_factory = None
@@ -549,6 +625,12 @@ def run_evaluation(base_url: Optional[str] = None, inprocess: bool = True):
     
     # Write report
     report = {
+        "metadata": {
+            "data_mode": data_mode,
+            "inprocess": inprocess,
+            "base_url": base_url if not inprocess else None,
+            "db_url": db_url if inprocess and db_mode == "real" else None
+        },
         "summary": {
             "total": total,
             "passed": passed,
@@ -568,7 +650,8 @@ def run_evaluation(base_url: Optional[str] = None, inprocess: bool = True):
     print(f"\nDetailed report written to {report_path}")
     
     # Cleanup
-    if inprocess:
+    if inprocess and (db_mode == "seeded" or (db_mode == "real" and db_url)):
+        # Clear overrides if we set them (seeded mode or real mode with custom db_url)
         app.dependency_overrides.clear()
     
     return report
@@ -590,6 +673,19 @@ def main():
         action="store_true",
         help="Run against remote server instead of in-process mode (default: in-process)"
     )
+    parser.add_argument(
+        "--db-mode",
+        type=str,
+        choices=["real", "seeded"],
+        default="real",
+        help="Database mode: 'real' uses existing database, 'seeded' uses in-memory with synthetic data (default: real)"
+    )
+    parser.add_argument(
+        "--db-url",
+        type=str,
+        default=None,
+        help="Database URL for real mode (default: uses app settings, typically sqlite:///./finance.db)"
+    )
     
     args = parser.parse_args()
     
@@ -597,12 +693,26 @@ def main():
     inprocess = not args.remote
     base_url = args.base_url if args.remote else None
     
+    # Validate db_mode (only relevant for in-process mode)
+    if inprocess:
+        db_mode = args.db_mode
+        db_url = args.db_url
+    else:
+        # Remote mode always uses real database (server's database)
+        db_mode = "real"
+        db_url = None
+    
     if args.remote and not HTTPX_AVAILABLE:
         print("Error: httpx is required for remote mode. Install with: pip install httpx")
         sys.exit(1)
     
     try:
-        run_evaluation(base_url=base_url, inprocess=inprocess)
+        run_evaluation(
+            base_url=base_url,
+            inprocess=inprocess,
+            db_mode=db_mode,
+            db_url=db_url
+        )
     except KeyboardInterrupt:
         print("\n\nEvaluation interrupted by user.")
         sys.exit(1)

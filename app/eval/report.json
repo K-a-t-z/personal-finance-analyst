@@ -1,12 +1,18 @@
 {
+  "metadata": {
+    "data_mode": "real",
+    "inprocess": true,
+    "base_url": null,
+    "db_url": null
+  },
   "summary": {
     "total": 30,
-    "passed": 28,
-    "failed": 2,
-    "pass_rate": 93.33333333333333,
+    "passed": 30,
+    "failed": 0,
+    "pass_rate": 100.0,
     "trace_compliance_rate": 100.0,
     "evidence_compliance_rate": 100.0,
-    "numeric_accuracy_rate": 87.5,
+    "numeric_accuracy_rate": 100.0,
     "clarification_correctness_rate": 100.0
   },
   "results": [
@@ -19,259 +25,104 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": null,
-        "clarifying_question": "Which merchant or store are you asking about? (e.g., 'at Target' or 'Uber')",
-        "numbers": null,
-        "evidence": [
-          {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
-            "source": "Chase"
-          },
-          {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
-            "source": "Chase"
-          },
-          {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
-            "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
-          }
-        ],
-        "trace": {
-          "intent": "merchant_total",
-          "resolved_month": "2025-06",
-          "called_functions": [],
-          "parameters": {
-            "month": "2025-06",
-            "known_categories": [
-              "Travel",
-              "Essentials",
-              "Food",
-              "Personal",
-              "Home",
-              "Others"
-            ],
-            "known_sources": [
-              "Credit Card",
-              "Cash",
-              "Chase"
-            ]
-          },
-          "filters_used": {
-            "month": "2025-06",
-            "kind": "expense"
-          },
-          "evidence_count_returned": 10,
-          "notes": [
-            "Month provided in request",
-            "Merchant could not be extracted from question"
-          ]
-        }
-      },
-      "checks": {
-        "trace_present": {
-          "passed": true,
-          "message": "pass"
-        },
-        "evidence_rule": {
-          "passed": true,
-          "message": "pass"
-        },
-        "intent_match": {
-          "passed": false,
-          "message": "intent mismatch: expected monthly_summary, got merchant_total"
-        },
-        "numeric_correctness": {
-          "passed": false,
-          "message": "no numbers in response"
-        }
-      },
-      "passed": false
-    },
-    {
-      "id": "q02",
-      "question": "How much did I spend in 2025-06?",
-      "month": "2025-06",
-      "expect": {
-        "type": "monthly_summary"
-      },
-      "status_code": 200,
-      "response": {
-        "final_answer": "In 2025-06, you spent $871.50 across 10 transactions. Net total: $871.50.",
+        "final_answer": "In 2025-06, you spent $3,583.09 across 166 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "871.50",
-          "income_total": "0.00",
-          "net_total": "871.50",
-          "transaction_count": 10
+          "expense_total": "3583.09",
+          "income_total": "-5.40",
+          "net_total": "3577.69",
+          "transaction_count": 166
         },
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -291,9 +142,186 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
+            ]
+          },
+          "filters_used": {
+            "month": "2025-06",
+            "kind": "expense"
+          },
+          "evidence_count_returned": 10,
+          "notes": [
+            "Month provided in request"
+          ]
+        }
+      },
+      "checks": {
+        "trace_present": {
+          "passed": true,
+          "message": "pass"
+        },
+        "evidence_rule": {
+          "passed": true,
+          "message": "pass"
+        },
+        "intent_match": {
+          "passed": true,
+          "message": "pass"
+        },
+        "numeric_correctness": {
+          "passed": true,
+          "message": "pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "q02",
+      "question": "How much did I spend in 2025-06?",
+      "month": "2025-06",
+      "expect": {
+        "type": "monthly_summary"
+      },
+      "status_code": 200,
+      "response": {
+        "final_answer": "In 2025-06, you spent $3,583.09 across 166 transactions.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "3583.09",
+          "income_total": "-5.40",
+          "net_total": "3577.69",
+          "transaction_count": 166
+        },
+        "evidence": [
+          {
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
+          },
+          {
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
+            "date": "2025-06-20",
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
+          },
+          {
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
+            "where": "Uber",
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
+          }
+        ],
+        "trace": {
+          "intent": "monthly_summary",
+          "resolved_month": "2025-06",
+          "called_functions": [
+            "get_monthly_totals"
+          ],
+          "parameters": {
+            "month": "2025-06",
+            "known_categories": [
+              "Travel",
+              "Essentials",
+              "Food",
+              "Personal",
+              "Home",
+              "Others"
+            ],
+            "known_sources": [
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
+              "Cash",
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -335,105 +363,112 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": null,
-        "clarifying_question": "Which merchant or store are you asking about? (e.g., 'at Target' or 'Uber')",
-        "numbers": null,
+        "final_answer": "In 2025-06, you spent $3,583.09 across 166 transactions. Net total: $3,577.69.",
+        "clarifying_question": null,
+        "numbers": {
+          "expense_total": "3583.09",
+          "income_total": "-5.40",
+          "net_total": "3577.69",
+          "transaction_count": 166
+        },
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
-          "intent": "merchant_total",
+          "intent": "monthly_summary",
           "resolved_month": "2025-06",
-          "called_functions": [],
+          "called_functions": [
+            "get_monthly_totals"
+          ],
           "parameters": {
             "month": "2025-06",
             "known_categories": [
@@ -445,9 +480,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -456,8 +499,7 @@
           },
           "evidence_count_returned": 10,
           "notes": [
-            "Month provided in request",
-            "Merchant could not be extracted from question"
+            "Month provided in request"
           ]
         }
       },
@@ -471,15 +513,15 @@
           "message": "pass"
         },
         "intent_match": {
-          "passed": false,
-          "message": "intent mismatch: expected monthly_summary, got merchant_total"
+          "passed": true,
+          "message": "pass"
         },
         "numeric_correctness": {
-          "passed": false,
-          "message": "no numbers in response"
+          "passed": true,
+          "message": "pass"
         }
       },
-      "passed": false
+      "passed": true
     },
     {
       "id": "q04",
@@ -491,48 +533,102 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $129.00 on Food in 2025-06 across 4 transactions.",
+        "final_answer": "You spent $191.50 on Food in 2025-06 across 26 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "129.00",
-          "count": 4
+          "expense_total": "191.50",
+          "count": 26
         },
         "evidence": [
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
+            "transaction_id": "a6b8519a-c30a-4203-9cdf-6b2efa6e2545",
+            "date": "2025-06-07",
+            "where": "Thai Table and Kitchen",
+            "what": "Thai food",
+            "amount": "17.33",
             "category": "Food",
-            "source": "Cash"
+            "source": "Chase"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
+            "transaction_id": "0d36eb6e-b4ec-45a4-8d1a-588e00524553",
+            "date": "2025-06-29",
+            "where": "Pocha",
+            "what": "Korean food",
+            "amount": "15.35",
             "category": "Food",
-            "source": "Credit Card"
+            "source": "Chase"
           },
           {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
+            "transaction_id": "90328ac7-e6f8-409e-ae43-79e135525f02",
+            "date": "2025-06-27",
+            "where": "Noodles & Company",
+            "what": "Pasta, Garlic bread",
+            "amount": "13.38",
             "category": "Food",
-            "source": "Cash"
+            "source": "Chase"
           },
           {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
+            "transaction_id": "14ce4d4d-2b98-4462-9bc4-c15999f5c83a",
             "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
+            "where": "Dagu Rice Noodle",
+            "what": "Fried rice",
+            "amount": "12.19",
             "category": "Food",
-            "source": "Credit Card"
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "57cf5294-87d3-4f72-a097-8fecef12b86b",
+            "date": "2025-06-09",
+            "where": "5801 Video Lounge & Bar",
+            "what": "Fries, Mac & Cheese wedges",
+            "amount": "12.06",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "f344966a-e833-4d0f-b45b-2bcf888f33b9",
+            "date": "2025-06-04",
+            "where": "AMC Waterfront",
+            "what": "Popcorn",
+            "amount": "11.01",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "6d6fbb87-2d89-4191-85a9-17d9a7dccaec",
+            "date": "2025-06-30",
+            "where": "Noodles & Company",
+            "what": "Pasta",
+            "amount": "8.29",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96cba248-ac45-4799-9beb-304f4c04a2a7",
+            "date": "2025-06-03",
+            "where": "Tamarind",
+            "what": "Biriyani",
+            "amount": "7.48",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d8b7f320-c77e-48c0-b0b3-42bca182a735",
+            "date": "2025-06-07",
+            "where": "Cafe Moulin",
+            "what": "Cr\u00eape",
+            "amount": "7.25",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "df006c45-3250-4f75-9d17-c598bb5b3d49",
+            "date": "2025-06-05",
+            "where": "Buenatarde Tequila y Mezcal",
+            "what": "Chips & Guac",
+            "amount": "7.25",
+            "category": "Food",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -552,9 +648,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "category": "Food"
           },
@@ -563,7 +667,7 @@
             "kind": "expense",
             "category": "Food"
           },
-          "evidence_count_returned": 4,
+          "evidence_count_returned": 10,
           "notes": [
             "Month provided in request",
             "Category extracted from question"
@@ -600,39 +704,93 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $337.50 on Travel in 2025-06 across 3 transactions.",
+        "final_answer": "You spent $45.53 on Travel in 2025-06 across 9 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "337.50",
-          "count": 3
+          "expense_total": "45.53",
+          "count": 9
         },
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
+            "transaction_id": "1c1afb68-6636-4570-b889-385f3789f0b5",
+            "date": "2025-06-04",
+            "where": "Uber",
+            "what": "Cab - home to theatre",
+            "amount": "12.91",
             "category": "Travel",
-            "source": "Credit Card"
+            "source": "Chase"
           },
           {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "aad5ad05-0bf1-41f2-badd-062b5867503e",
+            "date": "2025-06-03",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
+            "what": "Cab - bus stop to AE Works",
+            "amount": "7.34",
             "category": "Travel",
-            "source": "Credit Card"
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
+            "transaction_id": "c1c958df-58a1-4b9e-94e4-ed17ad736dbf",
+            "date": "2025-06-03",
+            "where": "PRT",
+            "what": "Bus ticket",
+            "amount": "7.00",
             "category": "Travel",
-            "source": "Credit Card"
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "117af2ca-8b49-4446-8725-323284ae72ff",
+            "date": "2025-06-04",
+            "where": "Uber",
+            "what": "Cab - theatre to home",
+            "amount": "5.78",
+            "category": "Travel",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "af5a6615-3e79-4023-b481-f2900df4e5eb",
+            "date": "2025-06-03",
+            "where": "BCTA",
+            "what": "Bus ticket",
+            "amount": "3.25",
+            "category": "Travel",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "479ac117-9c53-4cf4-ab22-b4a6c41dd284",
+            "date": "2025-06-07",
+            "where": "PRT",
+            "what": "Bus ticket",
+            "amount": "2.75",
+            "category": "Travel",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "82aaae05-b942-420b-947f-50dd6c16c34b",
+            "date": "2025-06-01",
+            "where": "PRT",
+            "what": "Bus ticket",
+            "amount": "2.75",
+            "category": "Travel",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "bc66ae6b-dd35-43a2-b0f2-6419eea71290",
+            "date": "2025-06-01",
+            "where": "PRT",
+            "what": "Bus ticket",
+            "amount": "2.75",
+            "category": "Travel",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "7a78f266-5447-410d-bf69-4912c45d4a45",
+            "date": "2025-06-04",
+            "where": "Lyft",
+            "what": "Cancellation Fee",
+            "amount": "1.00",
+            "category": "Travel",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -652,9 +810,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "category": "Travel"
           },
@@ -663,7 +829,7 @@
             "kind": "expense",
             "category": "Travel"
           },
-          "evidence_count_returned": 3,
+          "evidence_count_returned": 9,
           "notes": [
             "Month provided in request",
             "Category extracted from question"
@@ -700,21 +866,66 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $85.00 on Essentials in 2025-06 across 1 transactions.",
+        "final_answer": "You spent $48.50 on Essentials in 2025-06 across 6 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "85.00",
-          "count": 1
+          "expense_total": "48.50",
+          "count": 6
         },
         "evidence": [
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
-            "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
+            "transaction_id": "3d3197e4-d6a8-47a0-8082-4c7f3c0ed00b",
+            "date": "2025-06-15",
+            "where": "ChatGPT",
+            "what": "Monthly Subscription - ChatGPT",
+            "amount": "20.00",
             "category": "Essentials",
-            "source": "Credit Card"
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "c2b27f91-0b4a-47ca-93a2-089adddac893",
+            "date": "2025-06-26",
+            "where": "T-Mobile",
+            "what": "Monthly Bill - Mobile",
+            "amount": "16.54",
+            "category": "Essentials",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "9194b1bc-d37f-4a7d-b720-ec26eb17d480",
+            "date": "2025-06-22",
+            "where": "Apple",
+            "what": "Monthly Subscription - Apple Music",
+            "amount": "5.99",
+            "category": "Essentials",
+            "source": "BofA"
+          },
+          {
+            "transaction_id": "91479e19-3daf-4b7a-8752-8502d5da0b39",
+            "date": "2025-06-22",
+            "where": "Apple",
+            "what": "Monthly Bill - iCloud",
+            "amount": "2.99",
+            "category": "Essentials",
+            "source": "BofA"
+          },
+          {
+            "transaction_id": "414ad7c0-9736-4bf5-83d1-e5f3bfca61ca",
+            "date": "2025-06-11",
+            "where": "Peacock",
+            "what": "Monthly Subscription - Peacock",
+            "amount": "1.99",
+            "category": "Essentials",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "6f2d4c3d-4c81-4d72-8a29-dbfb54798dee",
+            "date": "2025-06-01",
+            "where": "Hulu",
+            "what": "Monthly Subscription - Hulu",
+            "amount": "0.99",
+            "category": "Essentials",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -734,9 +945,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "category": "Essentials"
           },
@@ -745,7 +964,7 @@
             "kind": "expense",
             "category": "Essentials"
           },
-          "evidence_count_returned": 1,
+          "evidence_count_returned": 6,
           "notes": [
             "Month provided in request",
             "Category extracted from question"
@@ -782,19 +1001,73 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $200.00 on Personal in 2025-06 across 1 transactions.",
+        "final_answer": "You spent $166.34 on Personal in 2025-06 across 7 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "200.00",
-          "count": 1
+          "expense_total": "166.34",
+          "count": 7
         },
         "evidence": [
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
+            "transaction_id": "c92aad90-6ad6-41cd-89cf-6ca1aeae49d5",
+            "date": "2025-06-07",
+            "where": "Thai Table and Kitchen",
+            "what": "For Dyanu & Sushruti - Thai food",
+            "amount": "34.67",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "4ce9efc1-b508-4b09-9e6d-d40df986016f",
+            "date": "2025-06-09",
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "28.93",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "2e52071c-02ba-4b6c-af46-d5b17491b8e1",
+            "date": "2025-06-05",
+            "where": "Zipcar",
+            "what": "Zipcar application fee",
+            "amount": "27.75",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "5b250e92-c01e-4019-bd48-9129805d9d6a",
+            "date": "2025-06-07",
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "25.61",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "b3e5e1f6-1232-489b-a576-e6ff676f7c3e",
+            "date": "2025-06-04",
+            "where": "AMC Waterfront",
+            "what": "Movie - Thug Life",
+            "amount": "23.00",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "09cf4aed-3ec5-4a05-afa7-e046f79c070e",
+            "date": "2025-06-05",
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "22.33",
+            "category": "Personal",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "c92f43f8-860c-4386-8359-4d13b8384ccd",
+            "date": "2025-06-08",
+            "where": "Tous Les Jours",
+            "what": "For Dyanu - Iced Mocha",
+            "amount": "4.05",
             "category": "Personal",
             "source": "Chase"
           }
@@ -816,9 +1089,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "category": "Personal"
           },
@@ -827,7 +1108,7 @@
             "kind": "expense",
             "category": "Personal"
           },
-          "evidence_count_returned": 1,
+          "evidence_count_returned": 7,
           "notes": [
             "Month provided in request",
             "Category extracted from question"
@@ -864,19 +1145,46 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $120.00 on Home in 2025-06 across 1 transactions.",
+        "final_answer": "You spent $22.82 on Home in 2025-06 across 4 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "120.00",
-          "count": 1
+          "expense_total": "22.82",
+          "count": 4
         },
         "evidence": [
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
+            "transaction_id": "92f98a2f-7fd0-451c-96dc-b32a24171139",
+            "date": "2025-06-01",
+            "where": "Walmart",
+            "what": "Groceries",
+            "amount": "12.58",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "0fa097ed-25ac-4e38-8957-f6a615dfe0d6",
+            "date": "2025-06-03",
+            "where": "Bombay Food Market",
+            "what": "Dosa batter",
+            "amount": "5.74",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "7441bb52-9927-4860-a9df-f7394eef77f9",
+            "date": "2025-06-08",
+            "where": "Target",
+            "what": "Salad",
+            "amount": "3.00",
+            "category": "Home",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "747bd89b-37b0-4112-ae49-4b2cb602f67e",
+            "date": "2025-06-01",
+            "where": "Trader Joe\u2019s",
+            "what": "Chips",
+            "amount": "1.50",
             "category": "Home",
             "source": "Chase"
           }
@@ -898,9 +1206,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "category": "Home"
           },
@@ -909,7 +1225,7 @@
             "kind": "expense",
             "category": "Home"
           },
-          "evidence_count_returned": 1,
+          "evidence_count_returned": 4,
           "notes": [
             "Month provided in request",
             "Category extracted from question"
@@ -946,30 +1262,102 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $37.50 at Uber in 2025-06 across 2 transactions.",
+        "final_answer": "You spent $416.23 at Uber in 2025-06 across 17 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "37.50",
-          "count": 2
+          "expense_total": "416.23",
+          "count": 17
         },
         "evidence": [
           {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "6f53f257-e22e-41a1-bc9d-667b1d16dffe",
+            "date": "2025-06-22",
+            "where": "Uber",
+            "what": "Cab - Manhattan to India Square",
+            "amount": "45.89",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "3a545940-35a2-4a41-a9be-02b93b3bd4e1",
+            "date": "2025-06-11",
+            "where": "Uber",
+            "what": "Cab - home to PIT",
+            "amount": "35.00",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "65d191f4-751e-4125-b46f-14936ccd8039",
+            "date": "2025-06-13",
+            "where": "Uber",
+            "what": "Cab - Milpitas to Tesla",
+            "amount": "25.88",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "7c5f0a07-adec-4a3f-8175-87ca4064bd92",
+            "date": "2025-06-12",
+            "where": "Uber",
+            "what": "Cab - Mountain View to Anjappar",
+            "amount": "18.37",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "913ddd85-679d-41d6-b783-fc2fce35fc4c",
+            "date": "2025-06-17",
+            "where": "Uber",
+            "what": "Cab - hotel to Union station",
+            "amount": "16.00",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "dff64f20-595b-4157-95e3-074ceba7fea0",
+            "date": "2025-06-22",
+            "where": "Uber",
+            "what": "Cab - Times Square to hotel",
+            "amount": "13.91",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d4d16982-3b08-4262-bc6c-88270a648ae3",
+            "date": "2025-06-17",
+            "where": "Uber",
+            "what": "Cab - Savoy to Champaign",
+            "amount": "13.07",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "1c1afb68-6636-4570-b889-385f3789f0b5",
+            "date": "2025-06-04",
+            "where": "Uber",
+            "what": "Cab - home to theatre",
+            "amount": "12.91",
             "category": "Travel",
-            "source": "Credit Card"
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -989,9 +1377,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "merchant": "Uber"
           },
@@ -1000,7 +1396,7 @@
             "kind": "expense",
             "merchant": "Uber"
           },
-          "evidence_count_returned": 2,
+          "evidence_count_returned": 10,
           "notes": [
             "Month provided in request",
             "Merchant extracted from question"
@@ -1037,21 +1433,21 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $85.00 at Target in 2025-06 across 1 transactions.",
+        "final_answer": "You spent $3.00 at Target in 2025-06 across 1 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "85.00",
+          "expense_total": "3.00",
           "count": 1
         },
         "evidence": [
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
-            "date": "2025-06-20",
+            "transaction_id": "7441bb52-9927-4860-a9df-f7394eef77f9",
+            "date": "2025-06-08",
             "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "what": "Salad",
+            "amount": "3.00",
+            "category": "Home",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -1071,9 +1467,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "merchant": "Target"
           },
@@ -1119,23 +1523,13 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $120.00 at Amazon in 2025-06 across 1 transactions.",
+        "final_answer": "You spent $0.00 at Amazon in 2025-06 across 0 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "120.00",
-          "count": 1
+          "expense_total": "0.00",
+          "count": 0
         },
-        "evidence": [
-          {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
-            "source": "Chase"
-          }
-        ],
+        "evidence": [],
         "trace": {
           "intent": "merchant_total",
           "resolved_month": "2025-06",
@@ -1153,9 +1547,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "merchant": "Amazon"
           },
@@ -1164,7 +1566,7 @@
             "kind": "expense",
             "merchant": "Amazon"
           },
-          "evidence_count_returned": 1,
+          "evidence_count_returned": 0,
           "notes": [
             "Month provided in request",
             "Merchant extracted from question"
@@ -1201,32 +1603,13 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $75.00 using Cash in 2025-06 across 2 transactions.",
+        "final_answer": "You spent $0.00 using Cash in 2025-06 across 0 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "75.00",
-          "count": 2
+          "expense_total": "0.00",
+          "count": 0
         },
-        "evidence": [
-          {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          }
-        ],
+        "evidence": [],
         "trace": {
           "intent": "source_total",
           "resolved_month": "2025-06",
@@ -1244,9 +1627,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "source": "Cash"
           },
@@ -1255,7 +1646,7 @@
             "kind": "expense",
             "source": "Cash"
           },
-          "evidence_count_returned": 2,
+          "evidence_count_returned": 0,
           "notes": [
             "Month provided in request",
             "Source extracted from question"
@@ -1292,29 +1683,101 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $320.00 using Chase in 2025-06 across 2 transactions.",
+        "final_answer": "You spent $2,862.16 using Chase in 2025-06 across 150 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "320.00",
-          "count": 2
+          "expense_total": "2862.16",
+          "count": 150
         },
         "evidence": [
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
+            "date": "2025-06-20",
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
+            "where": "Uber",
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "77b71d19-d1d8-437c-a4e9-eed6e98db832",
+            "date": "2025-06-21",
+            "where": "Fat Cactus Cantina",
+            "what": "Tacos",
+            "amount": "47.02",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "6a85f007-846a-414e-9c47-396df6b00105",
+            "date": "2025-06-12",
+            "where": "Anjappar",
+            "what": "Dosa, Rose Milk",
+            "amount": "46.21",
+            "category": "Others",
             "source": "Chase"
           }
         ],
@@ -1335,9 +1798,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "source": "Chase"
           },
@@ -1346,7 +1817,7 @@
             "kind": "expense",
             "source": "Chase"
           },
-          "evidence_count_returned": 2,
+          "evidence_count_returned": 10,
           "notes": [
             "Month provided in request",
             "Source extracted from question"
@@ -1383,99 +1854,99 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "Top merchants in 2025-06: Airline ($300.00), Store ($200.00), Amazon ($120.00)",
+        "final_answer": "Top merchants in 2025-06: Agoda ($601.26), Uber ($416.23), Delta Airlines ($239.48)",
         "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -1495,9 +1966,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -1539,99 +2018,99 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "Top merchants in 2025-06: Airline ($300.00), Store ($200.00), Amazon ($120.00)",
+        "final_answer": "Top merchants in 2025-06: Agoda ($601.26), Uber ($416.23), Delta Airlines ($239.48)",
         "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -1651,9 +2130,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -1695,99 +2182,99 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "Category breakdown for 2025-06: Travel: $337.50, Personal: $200.00, Food: $129.00",
+        "final_answer": "Category breakdown for 2025-06: Others: $3,108.40, Food: $191.50, Personal: $166.34",
         "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -1807,9 +2294,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -1851,99 +2346,99 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "Category breakdown for 2025-06: Travel: $337.50, Personal: $200.00, Food: $129.00",
+        "final_answer": "Category breakdown for 2025-06: Others: $3,108.40, Food: $191.50, Personal: $166.34",
         "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -1963,9 +2458,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -2007,99 +2510,99 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "Source breakdown for 2025-06: Credit Card: $476.50, Chase: $320.00, Cash: $75.00",
+        "final_answer": "Source breakdown for 2025-06: Chase: $2,862.16, Credit: $547.27, Starbucks: $104.68",
         "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -2119,9 +2622,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -2163,99 +2674,99 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "Source breakdown for 2025-06: Credit Card: $476.50, Chase: $320.00, Cash: $75.00",
+        "final_answer": "Source breakdown for 2025-06: Chase: $2,862.16, Credit: $547.27, Starbucks: $104.68",
         "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -2275,9 +2786,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -2448,104 +2967,104 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "In 2025-06, you spent $871.50 across 10 transactions. Net total: $871.50.",
+        "final_answer": "In 2025-06, you spent $3,583.09 across 166 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "871.50",
-          "income_total": "0.00",
-          "net_total": "871.50",
-          "transaction_count": 10
+          "expense_total": "3583.09",
+          "income_total": "-5.40",
+          "net_total": "3577.69",
+          "transaction_count": 166
         },
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -2565,9 +3084,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -2609,99 +3136,99 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "Category breakdown for 2025-06: Travel: $337.50, Personal: $200.00, Food: $129.00",
+        "final_answer": "Category breakdown for 2025-06: Others: $3,108.40, Food: $191.50, Personal: $166.34",
         "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "transaction_id": "64d91911-f176-4f94-a038-2a5d64f901de",
+            "date": "2025-06-11",
+            "where": "Agoda",
+            "what": "Hotel - Embassy Suites Chicago",
+            "amount": "465.22",
+            "category": "Others",
+            "source": "Credit"
           },
           {
-            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
+            "transaction_id": "1437b010-ec6f-4515-944b-fd535aa1090b",
+            "date": "2025-06-23",
+            "where": "Delta Airlines",
+            "what": "Flight - BOS to ORD",
+            "amount": "204.48",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
+            "transaction_id": "874591de-0114-4bef-930e-adc4e6d4c5f3",
+            "date": "2025-06-14",
+            "where": "American Airlines",
+            "what": "Luggage fee",
+            "amount": "140.00",
+            "category": "Others",
             "source": "Chase"
           },
           {
-            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
+            "transaction_id": "ecf0e311-388f-48a6-b593-f10da5c4554f",
+            "date": "2025-06-24",
+            "where": "Agoda",
+            "what": "Avid hotel Chicago",
+            "amount": "136.04",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "a762b435-2dd7-4e08-9c7c-ccefd0d6639c",
+            "date": "2025-06-26",
+            "where": "Uber",
+            "what": "Cab - hotel to EWR",
+            "amount": "130.53",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "ceeec10d-c5ae-461a-8007-19555ce0b4b4",
+            "date": "2025-06-24",
+            "where": "Aeropostale",
+            "what": "By Shreeja",
+            "amount": "116.86",
+            "category": "Others",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96b65aac-9193-41fe-b541-041194e59928",
             "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
+            "where": "Zipcar",
+            "what": "Car rental",
+            "amount": "77.87",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
+            "transaction_id": "545bebe5-5e30-4378-85cf-38d944971efd",
+            "date": "2025-06-25",
+            "where": "Reindeer Shuttle",
+            "what": "Bus - ORD to PMU",
+            "amount": "60.00",
+            "category": "Others",
+            "source": "Mastercard"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
-            "date": "2025-06-12",
+            "transaction_id": "f7055232-66c9-468a-a434-7a7a8a3ac255",
+            "date": "2025-06-15",
             "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
+            "what": "Cab - ORD to hotel",
+            "amount": "55.00",
+            "category": "Others",
+            "source": "Chase"
           },
           {
-            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
+            "transaction_id": "70e8ad7d-3ad4-4ab9-b1f2-79d332c5ca2e",
+            "date": "2025-06-26",
+            "where": "Olive Garden",
+            "what": "Pastas, Salad",
+            "amount": "48.04",
+            "category": "Others",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -2721,9 +3248,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ]
           },
           "filters_used": {
@@ -2766,48 +3301,102 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $129.00 on Food in 2025-06 across 4 transactions.",
+        "final_answer": "You spent $191.50 on Food in 2025-06 across 26 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "129.00",
-          "count": 4
+          "expense_total": "191.50",
+          "count": 26
         },
         "evidence": [
           {
-            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
+            "transaction_id": "a6b8519a-c30a-4203-9cdf-6b2efa6e2545",
+            "date": "2025-06-07",
+            "where": "Thai Table and Kitchen",
+            "what": "Thai food",
+            "amount": "17.33",
             "category": "Food",
-            "source": "Cash"
+            "source": "Chase"
           },
           {
-            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
+            "transaction_id": "0d36eb6e-b4ec-45a4-8d1a-588e00524553",
+            "date": "2025-06-29",
+            "where": "Pocha",
+            "what": "Korean food",
+            "amount": "15.35",
             "category": "Food",
-            "source": "Credit Card"
+            "source": "Chase"
           },
           {
-            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
+            "transaction_id": "90328ac7-e6f8-409e-ae43-79e135525f02",
+            "date": "2025-06-27",
+            "where": "Noodles & Company",
+            "what": "Pasta, Garlic bread",
+            "amount": "13.38",
             "category": "Food",
-            "source": "Cash"
+            "source": "Chase"
           },
           {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
+            "transaction_id": "14ce4d4d-2b98-4462-9bc4-c15999f5c83a",
             "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
+            "where": "Dagu Rice Noodle",
+            "what": "Fried rice",
+            "amount": "12.19",
             "category": "Food",
-            "source": "Credit Card"
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "57cf5294-87d3-4f72-a097-8fecef12b86b",
+            "date": "2025-06-09",
+            "where": "5801 Video Lounge & Bar",
+            "what": "Fries, Mac & Cheese wedges",
+            "amount": "12.06",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "f344966a-e833-4d0f-b45b-2bcf888f33b9",
+            "date": "2025-06-04",
+            "where": "AMC Waterfront",
+            "what": "Popcorn",
+            "amount": "11.01",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "6d6fbb87-2d89-4191-85a9-17d9a7dccaec",
+            "date": "2025-06-30",
+            "where": "Noodles & Company",
+            "what": "Pasta",
+            "amount": "8.29",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "96cba248-ac45-4799-9beb-304f4c04a2a7",
+            "date": "2025-06-03",
+            "where": "Tamarind",
+            "what": "Biriyani",
+            "amount": "7.48",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "d8b7f320-c77e-48c0-b0b3-42bca182a735",
+            "date": "2025-06-07",
+            "where": "Cafe Moulin",
+            "what": "Cr\u00eape",
+            "amount": "7.25",
+            "category": "Food",
+            "source": "Chase"
+          },
+          {
+            "transaction_id": "df006c45-3250-4f75-9d17-c598bb5b3d49",
+            "date": "2025-06-05",
+            "where": "Buenatarde Tequila y Mezcal",
+            "what": "Chips & Guac",
+            "amount": "7.25",
+            "category": "Food",
+            "source": "Chase"
           }
         ],
         "trace": {
@@ -2827,9 +3416,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "category": "Food"
           },
@@ -2838,7 +3435,7 @@
             "kind": "expense",
             "category": "Food"
           },
-          "evidence_count_returned": 4,
+          "evidence_count_returned": 10,
           "notes": [
             "Month provided in request",
             "Category extracted from question"
@@ -2875,21 +3472,66 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "You spent $8.50 at Starbucks in 2025-06 across 1 transactions.",
+        "final_answer": "You spent $84.01 at Starbucks in 2025-06 across 6 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "8.50",
-          "count": 1
+          "expense_total": "84.01",
+          "count": 6
         },
         "evidence": [
           {
-            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
-            "date": "2025-06-28",
+            "transaction_id": "2c3966b0-1751-40c0-8c5d-aa80b98d5301",
+            "date": "2025-06-12",
             "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
+            "what": "Drinks",
+            "amount": "23.05",
+            "category": "Others",
+            "source": "Starbucks"
+          },
+          {
+            "transaction_id": "c2554b51-40b0-40fb-b591-ee17c6f3553d",
+            "date": "2025-06-11",
+            "where": "Starbucks",
+            "what": "Drinks",
+            "amount": "17.80",
+            "category": "Others",
+            "source": "Starbucks"
+          },
+          {
+            "transaction_id": "ac47386c-4c0a-4190-b387-e66eb7438733",
+            "date": "2025-06-22",
+            "where": "Starbucks",
+            "what": "Drinks",
+            "amount": "16.71",
+            "category": "Others",
+            "source": "Starbucks"
+          },
+          {
+            "transaction_id": "45e29012-6f93-4796-9c0f-85d070054538",
+            "date": "2025-06-23",
+            "where": "Starbucks",
+            "what": "Drinks",
+            "amount": "15.13",
+            "category": "Others",
+            "source": "Starbucks"
+          },
+          {
+            "transaction_id": "4f4febde-7771-47c9-add1-b4bbef8fe589",
+            "date": "2025-06-30",
+            "where": "Starbucks",
+            "what": "Frap of Colors",
+            "amount": "6.37",
             "category": "Food",
-            "source": "Credit Card"
+            "source": "Starbucks"
+          },
+          {
+            "transaction_id": "88220cf8-1bd7-44bd-9090-34eef2386d4e",
+            "date": "2025-06-13",
+            "where": "Starbucks",
+            "what": "Falafel pocket",
+            "amount": "4.95",
+            "category": "Others",
+            "source": "Starbucks"
           }
         ],
         "trace": {
@@ -2909,9 +3551,17 @@
               "Others"
             ],
             "known_sources": [
-              "Credit Card",
+              "('BofA',)",
+              "('Chase',)",
+              "('Credit',)",
+              "('Mastercard',)",
+              "('Starbucks',)",
+              "BofA",
               "Cash",
-              "Chase"
+              "Chase",
+              "Credit",
+              "Credit Card",
+              "Starbucks"
             ],
             "merchant": "Starbucks"
           },
@@ -2920,7 +3570,7 @@
             "kind": "expense",
             "merchant": "Starbucks"
           },
-          "evidence_count_returned": 1,
+          "evidence_count_returned": 6,
           "notes": [
             "Month provided in request",
             "Merchant extracted from question"

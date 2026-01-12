@@ -9,6 +9,16 @@ def classify_intent(question: str, known_sources: Optional[List[str]] = None) ->
     """
     Classify the intent of a financial query question.
     
+    Priority order:
+    1. top_merchants (top + merchant/where)
+    2. category_breakdown (breakdown + category, or category + superlative)
+    3. source_breakdown (breakdown + source)
+    4. source_total (keywords using/via/with/from + known source)
+    5. category_total (known category or "category" with a category value)
+    6. merchant_total (explicit merchant phrase: "at <x>" or quoted merchant)
+    7. monthly_summary (month exists + keywords: spent/spend/expense/expenses/total/net/overall)
+    8. unknown
+    
     Args:
         question: User question string
         known_sources: Optional list of known source names for better classification
@@ -22,58 +32,102 @@ def classify_intent(question: str, known_sources: Optional[List[str]] = None) ->
     
     question_lower = question.lower()
     
-    # Check for breakdowns first (more specific)
-    if "breakdown" in question_lower:
-        if "category" in question_lower:
-            return "category_breakdown"
-        if "source" in question_lower:
-            return "source_breakdown"
-    
-    # Check for top merchants
+    # Priority 1: Check for top merchants
     if "top" in question_lower and ("merchant" in question_lower or "where" in question_lower):
         return "top_merchants"
     
-    # Check for superlative category questions (e.g., "which category did I spend the most on")
-    # These should route to category_breakdown, not category_total
+    # Priority 2: Check for category breakdown
+    if "breakdown" in question_lower and "category" in question_lower:
+        return "category_breakdown"
+    
+    # Also check for superlative category questions (e.g., "which category did I spend the most on")
     if "category" in question_lower:
         superlative_keywords = ["most", "highest", "max", "maximum", "largest"]
         has_superlative = any(keyword in question_lower for keyword in superlative_keywords)
         if has_superlative:
             return "category_breakdown"
     
-    # Check for category total (check for known category names or "category" keyword)
-    # This should come before merchant_total to prevent "Food" from being interpreted as a merchant
-    if extract_category(question, KNOWN_CATEGORIES) is not None or "category" in question_lower:
-        return "category_total"
+    # Priority 3: Check for source breakdown
+    if "breakdown" in question_lower and "source" in question_lower:
+        return "source_breakdown"
     
-    # Check for source total with keywords: "using", "via", "with", "from" + known source
-    # This should come before generic "source" keyword check
+    # Priority 4: Check for source total with keywords: "using", "via", "with", "from"
+    # Strengthened: If source keywords are present, try to extract a plausible source token
+    # (either from known_sources OR as a fallback token immediately after keyword)
     source_keywords = ["using", "via", "with", "from"]
     has_source_keyword = any(keyword in question_lower for keyword in source_keywords)
-    if has_source_keyword and known_sources:
-        # Check if a known source is mentioned
-        if extract_source(question, known_sources) is not None:
-            return "source_total"
+    if has_source_keyword:
+        # First try to extract from known_sources
+        if known_sources:
+            extracted_source = extract_source(question, known_sources)
+            if extracted_source:
+                return "source_total"
+        
+        # Fallback: Try to extract a plausible source token immediately after keyword
+        # This handles cases like "using Cash" even if Cash isn't in known_sources for that month
+        for keyword in source_keywords:
+            # Pattern: keyword + source token (1-2 words, stopping at boundary words)
+            keyword_pattern = rf'\b{re.escape(keyword)}\s+([A-Za-z]+(?:\s+[A-Za-z]+)?)'
+            match = re.search(keyword_pattern, question_lower)
+            if match:
+                potential_source = match.group(1).strip()
+                if not potential_source:
+                    continue
+                
+                # Remove trailing boundary words
+                boundary_words = ["in", "for", "during", "this", "last", "on", "at", "the"]
+                words = potential_source.split()
+                while words and words[-1] in boundary_words:
+                    words.pop()
+                if words:
+                    # Found a plausible source token after keyword
+                    return "source_total"
     
-    # Check for source total (but not if breakdown was already matched)
-    if "source" in question_lower:
-        return "source_total"
+    # Priority 5: Check for category total (known category or "category" with a category value)
+    # Check if a known category is mentioned
+    if extract_category(question, KNOWN_CATEGORIES) is not None:
+        return "category_total"
+    # Also check if "category" keyword appears (but not if it's a breakdown)
+    if "category" in question_lower:
+        return "category_total"
     
-    # Check for merchant total (quoted phrase or after "at"/"on")
-    # This comes after category_total to prevent category names from being interpreted as merchants
-    merchant_pattern = r'["\']([^"\']+)["\']|(?:at|on)\s+(\w+(?:\s+\w+)*)'
-    if re.search(merchant_pattern, question_lower):
-        return "merchant_total"
+    # Priority 6: Check for merchant total
+    # Merchant_total should trigger if:
+    # - question contains "at" OR "on" OR contains a quoted phrase
+    # - AND the extracted phrase is not a known category
+    # - AND the question does NOT contain source keywords ("using", "via", "with", "from")
     
-    # Check for monthly summary (using extract_month and expanded keywords)
-    # Only if none of the above entity-specific queries matched
+    # First check: does question contain source keywords? If yes, skip merchant_total
+    source_keywords_check = ["using", "via", "with", "from"]
+    has_source_keyword_in_question = any(keyword in question_lower for keyword in source_keywords_check)
+    
+    if not has_source_keyword_in_question:
+        # Check for merchant signals: "at", "on", or quoted phrase
+        quoted_merchant_pattern = r'["\']([^"\']+)["\']'
+        at_on_merchant_pattern = r'\b(?:at|on)\s+(\w+(?:\s+\w+)*)'
+        
+        has_quoted_merchant = re.search(quoted_merchant_pattern, question)
+        has_at_on_merchant = re.search(at_on_merchant_pattern, question_lower)
+        
+        if has_quoted_merchant or has_at_on_merchant:
+            # Try to extract merchant and verify it's not a known category
+            extracted_merchant = extract_merchant(question, KNOWN_CATEGORIES)
+            if extracted_merchant:
+                return "merchant_total"
+    
+    # Priority 7: Check for monthly summary (FINAL FALLBACK)
+    # Only returns monthly_summary if:
+    # - All other intent checks (top/breakdown/source/category/merchant) have failed
+    # - Month exists in question
+    # - Question contains spend keywords
     month = extract_month(question)
     if month:
-        monthly_keywords = ["spend", "spent", "expense", "expenses", "total", "net"]
+        monthly_keywords = ["spent", "spend", "expense", "expenses", "total", "net", "overall"]
         has_monthly_keyword = any(keyword in question_lower for keyword in monthly_keywords)
         if has_monthly_keyword:
             return "monthly_summary"
     
+    # Priority 8: unknown
     return "unknown"
 
 
@@ -175,52 +229,75 @@ def extract_source(question: str, known_sources: List[str]) -> Optional[str]:
     """
     Extract source name from question by matching against known sources.
     
-    Looks for patterns like "using Cash", "via Chase", "with Credit", "from BofA"
-    and also matches sources anywhere in the question (case-insensitive).
+    Prioritizes strong signals like "using X", "via X", "with X", "from X".
+    Matches case-insensitively and returns the canonical value from known_sources
+    (preserving original capitalization).
     
     Args:
         question: User question string
         known_sources: List of known source names to match against
         
     Returns:
-        Matched source name if found, None otherwise
+        Matched source name (canonical from known_sources) if found, None otherwise
     """
     if not question or not known_sources:
         return None
     
     question_lower = question.lower()
     
-    # First, try to find source after keywords: "using", "via", "with", "from"
+    # Priority 1: Strong signals - look for source after keywords: "using", "via", "with", "from"
     source_keywords = ["using", "via", "with", "from"]
     for keyword in source_keywords:
-        # Pattern: keyword + source (e.g., "using Cash", "via Chase")
-        keyword_pattern = rf'\b{re.escape(keyword)}\s+([A-Za-z]+(?:\s+[A-Za-z]+)*)'
+        # Pattern: keyword + source (e.g., "using Cash", "via Chase", "with Credit Card")
+        # Extract word(s) after the keyword, up to 3 words or until a boundary word
+        keyword_pattern = rf'\b{re.escape(keyword)}\s+([A-Za-z]+(?:\s+[A-Za-z]+){{0,2}})'
         match = re.search(keyword_pattern, question_lower)
         if match:
             potential_source = match.group(1).strip()
-            # Check if it matches any known source (case-insensitive)
+            if not potential_source:
+                continue
+            
+            # Remove any trailing boundary words that might have been captured
+            boundary_words = ["in", "for", "during", "this", "last", "on", "at", "the"]
+            words = potential_source.split()
+            # Remove trailing boundary words
+            while words and words[-1] in boundary_words:
+                words.pop()
+            if not words:
+                continue
+            potential_source = " ".join(words)
+            
+            # Check if potential_source matches any known source (case-insensitive, exact match)
             for source in known_sources:
                 if not source:
                     continue
                 if source.lower() == potential_source.lower():
+                    # Return canonical value from known_sources (preserves capitalization)
                     return source
-            # Also check if potential_source contains a known source
+            
+            # Also check if potential_source contains a known source (for multi-word sources)
+            # This handles cases like "Credit Card" when potential_source is "Credit Card Payment"
             for source in known_sources:
                 if not source:
                     continue
                 source_lower = source.lower()
+                # Check if the known source appears as a whole phrase in potential_source
                 if source_lower in potential_source.lower():
-                    return source
+                    # Verify it's a word boundary match (not just substring)
+                    source_pattern = r'\b' + re.escape(source_lower) + r'\b'
+                    if re.search(source_pattern, potential_source.lower()):
+                        return source
     
-    # Fall back to matching sources anywhere in the question (case-insensitive)
+    # Priority 2: Fall back to matching sources anywhere in the question (case-insensitive)
     for source in known_sources:
         if not source:
             continue
-        # Match whole word or phrase
+        # Match whole word or phrase (case-insensitive)
         source_lower = source.lower()
-        # Use word boundary or phrase matching
+        # Use word boundary matching to avoid partial matches
         pattern = r'\b' + re.escape(source_lower) + r'\b'
         if re.search(pattern, question_lower):
+            # Return canonical value from known_sources (preserves capitalization)
             return source
     
     return None

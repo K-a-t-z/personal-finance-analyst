@@ -30,17 +30,45 @@ router = APIRouter()
 # Known categories
 KNOWN_CATEGORIES = ["Travel", "Essentials", "Food", "Personal", "Home", "Others"]
 
+# Default fallback sources (always included)
+DEFAULT_SOURCES = ["Chase", "Credit", "Credit Card", "Cash", "BofA", "Starbucks"]
+
 
 def _get_known_sources(db: Session, month: str) -> List[str]:
-    """Get distinct sources from DB for a given month."""
+    """
+    Get distinct sources from DB for a given month, merged with default sources.
+    
+    Args:
+        db: Database session
+        month: Month in "YYYY-MM" format
+        
+    Returns:
+        Sorted list of unique source strings (db_sources + default_sources).
+    """
+    db_sources = []
     try:
-        results = db.query(distinct(Transaction.source)).filter(
+        results = db.query(Transaction.source).filter(
             Transaction.year_month == month,
             Transaction.source.isnot(None)
-        ).all()
-        return [source[0] for source in results if source[0]]
+        ).distinct().all()
+        
+        # Convert to list of strings
+        # SQLAlchemy returns tuples when querying a single column: [('Cash',), ('Credit Card',), ...]
+        for result in results:
+            if isinstance(result, tuple):
+                source = result[0]
+            else:
+                source = result
+            
+            if source and str(source).strip():
+                db_sources.append(str(source).strip())
     except Exception:
-        return []
+        # On error, db_sources remains empty
+        pass
+    
+    # Merge db_sources with default_sources and return sorted unique list
+    all_sources = list(set(db_sources + DEFAULT_SOURCES))
+    return sorted(all_sources)
 
 
 def _format_amount(amount: Decimal) -> str:
@@ -149,11 +177,22 @@ async def query_finance(
                 "transaction_count": totals["transaction_count"]
             }
             spend_phrase = format_spend_phrase(intent, None)
-            final_answer = (
-                f"In {month}, you spent {_format_amount(totals['expense_total'])} "
-                f"across {totals['transaction_count']} transactions. "
-                f"Net total: {_format_amount(totals['net_total'])}."
-            )
+            
+            # Check if question contains "net" to conditionally mention net_total
+            question_lower = request.question.lower()
+            has_net = "net" in question_lower
+            
+            if has_net:
+                final_answer = (
+                    f"In {month}, you spent {_format_amount(totals['expense_total'])} "
+                    f"across {totals['transaction_count']} transactions. "
+                    f"Net total: {_format_amount(totals['net_total'])}."
+                )
+            else:
+                final_answer = (
+                    f"In {month}, you spent {_format_amount(totals['expense_total'])} "
+                    f"across {totals['transaction_count']} transactions."
+                )
         
         elif intent == "category_total":
             category = extract_category(request.question, known_categories)
