@@ -1,12 +1,12 @@
 {
   "summary": {
     "total": 30,
-    "passed": 25,
-    "failed": 5,
-    "pass_rate": 83.33333333333334,
+    "passed": 28,
+    "failed": 2,
+    "pass_rate": 93.33333333333333,
     "trace_compliance_rate": 100.0,
     "evidence_compliance_rate": 100.0,
-    "numeric_accuracy_rate": 75.0,
+    "numeric_accuracy_rate": 87.5,
     "clarification_correctness_rate": 100.0
   },
   "results": [
@@ -24,7 +24,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -33,7 +33,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -42,7 +42,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -51,7 +51,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -60,7 +60,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -69,7 +69,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -78,7 +78,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -87,7 +87,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -96,7 +96,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -105,7 +105,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -184,7 +184,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -193,7 +193,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -202,7 +202,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -211,7 +211,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -220,7 +220,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -229,7 +229,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -238,7 +238,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -247,7 +247,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -256,7 +256,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -265,7 +265,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -340,7 +340,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -349,7 +349,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -358,7 +358,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -367,7 +367,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -376,7 +376,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -385,7 +385,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -394,7 +394,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -403,7 +403,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -412,7 +412,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -421,7 +421,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -499,7 +499,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -508,7 +508,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -517,7 +517,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -526,7 +526,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -608,7 +608,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -617,7 +617,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -626,7 +626,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -708,7 +708,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -790,7 +790,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -872,7 +872,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -954,7 +954,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -963,7 +963,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -1045,7 +1045,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -1127,7 +1127,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -1201,53 +1201,15 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "In 2025-06, you spent $871.50 across 10 transactions. Net total: $871.50.",
+        "final_answer": "You spent $75.00 using Cash in 2025-06 across 2 transactions.",
         "clarifying_question": null,
         "numbers": {
-          "expense_total": "871.50",
-          "income_total": "0.00",
-          "net_total": "871.50",
-          "transaction_count": 10
+          "expense_total": "75.00",
+          "count": 2
         },
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
-            "date": "2025-06-25",
-            "where": "Store",
-            "what": "Purchase",
-            "amount": "200.00",
-            "category": "Personal",
-            "source": "Chase"
-          },
-          {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
-            "date": "2025-06-18",
-            "where": "Amazon",
-            "what": "Online Purchase",
-            "amount": "120.00",
-            "category": "Home",
-            "source": "Chase"
-          },
-          {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
-            "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -1256,56 +1218,20 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
             "amount": "25.00",
             "category": "Food",
             "source": "Cash"
-          },
-          {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
-            "date": "2025-06-12",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
           }
         ],
         "trace": {
-          "intent": "monthly_summary",
+          "intent": "source_total",
           "resolved_month": "2025-06",
           "called_functions": [
-            "get_monthly_totals"
+            "get_source_total"
           ],
           "parameters": {
             "month": "2025-06",
@@ -1321,15 +1247,18 @@
               "Credit Card",
               "Cash",
               "Chase"
-            ]
+            ],
+            "source": "Cash"
           },
           "filters_used": {
             "month": "2025-06",
-            "kind": "expense"
+            "kind": "expense",
+            "source": "Cash"
           },
-          "evidence_count_returned": 10,
+          "evidence_count_returned": 2,
           "notes": [
-            "Month provided in request"
+            "Month provided in request",
+            "Source extracted from question"
           ]
         }
       },
@@ -1343,15 +1272,15 @@
           "message": "pass"
         },
         "intent_match": {
-          "passed": false,
-          "message": "intent mismatch: expected source_total, got monthly_summary"
+          "passed": true,
+          "message": "pass"
         },
         "numeric_correctness": {
-          "passed": false,
-          "message": "expense_total mismatch: expected 75.00, got 871.50"
+          "passed": true,
+          "message": "pass"
         }
       },
-      "passed": false
+      "passed": true
     },
     {
       "id": "q13",
@@ -1363,21 +1292,15 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": "I can help you with questions about your spending. Supported question types include: monthly summaries, category totals, merchant totals, source totals, top merchants, and category/source breakdowns. Please rephrase your question with a specific month (YYYY-MM format).",
+        "final_answer": "You spent $320.00 using Chase in 2025-06 across 2 transactions.",
         "clarifying_question": null,
-        "numbers": null,
+        "numbers": {
+          "expense_total": "320.00",
+          "count": 2
+        },
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
-            "date": "2025-06-15",
-            "where": "Airline",
-            "what": "Flight",
-            "amount": "300.00",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -1386,82 +1309,21 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
             "amount": "120.00",
             "category": "Home",
             "source": "Chase"
-          },
-          {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
-            "date": "2025-06-20",
-            "where": "Target",
-            "what": "Shopping",
-            "amount": "85.00",
-            "category": "Essentials",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
-            "date": "2025-06-22",
-            "where": "Coffee Shop",
-            "what": "Coffee",
-            "amount": "50.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
-            "date": "2025-06-05",
-            "where": "Grocery Store",
-            "what": "Groceries",
-            "amount": "45.50",
-            "category": "Food",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
-            "date": "2025-06-10",
-            "where": "Restaurant",
-            "what": "Dinner",
-            "amount": "25.00",
-            "category": "Food",
-            "source": "Cash"
-          },
-          {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
-            "date": "2025-06-12",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "22.00",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
-            "date": "2025-06-08",
-            "where": "Uber",
-            "what": "Ride",
-            "amount": "15.50",
-            "category": "Travel",
-            "source": "Credit Card"
-          },
-          {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
-            "date": "2025-06-28",
-            "where": "Starbucks",
-            "what": "Coffee",
-            "amount": "8.50",
-            "category": "Food",
-            "source": "Credit Card"
           }
         ],
         "trace": {
-          "intent": "unknown",
+          "intent": "source_total",
           "resolved_month": "2025-06",
-          "called_functions": [],
+          "called_functions": [
+            "get_source_total"
+          ],
           "parameters": {
             "month": "2025-06",
             "known_categories": [
@@ -1476,15 +1338,18 @@
               "Credit Card",
               "Cash",
               "Chase"
-            ]
+            ],
+            "source": "Chase"
           },
           "filters_used": {
             "month": "2025-06",
-            "kind": "expense"
+            "kind": "expense",
+            "source": "Chase"
           },
-          "evidence_count_returned": 10,
+          "evidence_count_returned": 2,
           "notes": [
-            "Month provided in request"
+            "Month provided in request",
+            "Source extracted from question"
           ]
         }
       },
@@ -1498,15 +1363,15 @@
           "message": "pass"
         },
         "intent_match": {
-          "passed": false,
-          "message": "intent mismatch: expected source_total, got unknown"
+          "passed": true,
+          "message": "pass"
         },
         "numeric_correctness": {
-          "passed": false,
-          "message": "no numbers in response"
+          "passed": true,
+          "message": "pass"
         }
       },
-      "passed": false
+      "passed": true
     },
     {
       "id": "q14",
@@ -1523,7 +1388,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -1532,7 +1397,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -1541,7 +1406,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -1550,7 +1415,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -1559,7 +1424,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -1568,7 +1433,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -1577,7 +1442,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -1586,7 +1451,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -1595,7 +1460,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -1604,7 +1469,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -1679,7 +1544,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -1688,7 +1553,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -1697,7 +1562,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -1706,7 +1571,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -1715,7 +1580,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -1724,7 +1589,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -1733,7 +1598,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -1742,7 +1607,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -1751,7 +1616,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -1760,7 +1625,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -1835,7 +1700,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -1844,7 +1709,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -1853,7 +1718,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -1862,7 +1727,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -1871,7 +1736,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -1880,7 +1745,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -1889,7 +1754,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -1898,7 +1763,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -1907,7 +1772,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -1916,7 +1781,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -1991,7 +1856,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -2000,7 +1865,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -2009,7 +1874,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -2018,7 +1883,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -2027,7 +1892,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -2036,7 +1901,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -2045,7 +1910,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -2054,7 +1919,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -2063,7 +1928,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -2072,7 +1937,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -2147,7 +2012,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -2156,7 +2021,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -2165,7 +2030,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -2174,7 +2039,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -2183,7 +2048,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -2192,7 +2057,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -2201,7 +2066,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -2210,7 +2075,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -2219,7 +2084,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -2228,7 +2093,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -2303,7 +2168,7 @@
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -2312,7 +2177,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -2321,7 +2186,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -2330,7 +2195,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -2339,7 +2204,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -2348,7 +2213,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -2357,7 +2222,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -2366,7 +2231,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -2375,7 +2240,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -2384,7 +2249,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -2593,7 +2458,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -2602,7 +2467,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -2611,7 +2476,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -2620,7 +2485,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -2629,7 +2494,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -2638,7 +2503,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -2647,7 +2512,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -2656,7 +2521,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -2665,7 +2530,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -2674,7 +2539,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -2744,12 +2609,12 @@
       },
       "status_code": 200,
       "response": {
-        "final_answer": null,
-        "clarifying_question": "Which category are you interested in? (e.g., Food, Travel, Essentials)",
+        "final_answer": "Category breakdown for 2025-06: Travel: $337.50, Personal: $200.00, Food: $129.00",
+        "clarifying_question": null,
         "numbers": null,
         "evidence": [
           {
-            "transaction_id": "22c85c0d-de65-4e99-ba51-85f0440e9521",
+            "transaction_id": "7a61eede-da98-4293-95e6-fbfde428c177",
             "date": "2025-06-15",
             "where": "Airline",
             "what": "Flight",
@@ -2758,7 +2623,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "4b4eb60d-8ef6-4fab-8da7-afe159cde644",
+            "transaction_id": "9657c22e-9069-4e77-921c-2a8ca93ed3ab",
             "date": "2025-06-25",
             "where": "Store",
             "what": "Purchase",
@@ -2767,7 +2632,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "b92d0d18-17db-44c7-ac3c-2e41f4f8bcee",
+            "transaction_id": "cb9203ef-13dc-44ba-a30d-b5bc841c9d74",
             "date": "2025-06-18",
             "where": "Amazon",
             "what": "Online Purchase",
@@ -2776,7 +2641,7 @@
             "source": "Chase"
           },
           {
-            "transaction_id": "d5628e04-cc59-4e73-b652-67526c8ebe5b",
+            "transaction_id": "d691faf7-2a26-44c3-9414-190343279b90",
             "date": "2025-06-20",
             "where": "Target",
             "what": "Shopping",
@@ -2785,7 +2650,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -2794,7 +2659,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -2803,7 +2668,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -2812,7 +2677,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "3993e394-5472-43af-9640-2bc9021f25d0",
+            "transaction_id": "798c5507-d280-4ca9-ae38-d66a3ea3663a",
             "date": "2025-06-12",
             "where": "Uber",
             "what": "Ride",
@@ -2821,7 +2686,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "817f8ee5-c9f6-4069-9c8e-6dc733682f58",
+            "transaction_id": "093f5970-a308-4985-8db5-efbc2953bef2",
             "date": "2025-06-08",
             "where": "Uber",
             "what": "Ride",
@@ -2830,7 +2695,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -2840,9 +2705,11 @@
           }
         ],
         "trace": {
-          "intent": "category_total",
+          "intent": "category_breakdown",
           "resolved_month": "2025-06",
-          "called_functions": [],
+          "called_functions": [
+            "get_category_breakdown"
+          ],
           "parameters": {
             "month": "2025-06",
             "known_categories": [
@@ -2865,8 +2732,7 @@
           },
           "evidence_count_returned": 10,
           "notes": [
-            "Month provided in request",
-            "Category could not be extracted from question"
+            "Month provided in request"
           ]
         }
       },
@@ -2880,15 +2746,15 @@
           "message": "pass"
         },
         "intent_match": {
-          "passed": false,
-          "message": "intent mismatch: expected category_breakdown, got category_total"
+          "passed": true,
+          "message": "pass"
         },
         "numeric_correctness": {
           "passed": true,
           "message": "pass"
         }
       },
-      "passed": false
+      "passed": true
     },
     {
       "id": "q25",
@@ -2908,7 +2774,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "c01b376a-06b8-4a01-b743-458ec4ffcf52",
+            "transaction_id": "329074a9-6904-4bb9-9a98-8236e65397d5",
             "date": "2025-06-22",
             "where": "Coffee Shop",
             "what": "Coffee",
@@ -2917,7 +2783,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "7d42d820-ce28-4ceb-92d3-086353da51b4",
+            "transaction_id": "45c3019b-135d-4067-ac0e-08b76bebe438",
             "date": "2025-06-05",
             "where": "Grocery Store",
             "what": "Groceries",
@@ -2926,7 +2792,7 @@
             "source": "Credit Card"
           },
           {
-            "transaction_id": "72da3fec-4cac-4032-b01b-a5dd2b162c67",
+            "transaction_id": "98f04e96-4034-4f00-9aba-2b805178474e",
             "date": "2025-06-10",
             "where": "Restaurant",
             "what": "Dinner",
@@ -2935,7 +2801,7 @@
             "source": "Cash"
           },
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",
@@ -3017,7 +2883,7 @@
         },
         "evidence": [
           {
-            "transaction_id": "c9d047ad-0956-4bb8-b285-994aa2ee74ae",
+            "transaction_id": "880a794e-171d-455a-8b29-cae2c16111e7",
             "date": "2025-06-28",
             "where": "Starbucks",
             "what": "Coffee",

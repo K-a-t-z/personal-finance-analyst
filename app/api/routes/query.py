@@ -125,8 +125,8 @@ async def query_finance(
     trace["parameters"]["known_categories"] = known_categories
     trace["parameters"]["known_sources"] = known_sources
     
-    # Step 3: Classify intent
-    intent = classify_intent(request.question)
+    # Step 3: Classify intent (pass known_sources for better classification)
+    intent = classify_intent(request.question, known_sources=known_sources)
     trace["intent"] = intent
     
     # Step 4: Handle based on intent

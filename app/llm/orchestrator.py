@@ -5,12 +5,13 @@ from typing import Optional, List
 KNOWN_CATEGORIES = ["Travel", "Essentials", "Food", "Personal", "Home", "Others"]
 
 
-def classify_intent(question: str) -> str:
+def classify_intent(question: str, known_sources: Optional[List[str]] = None) -> str:
     """
     Classify the intent of a financial query question.
     
     Args:
         question: User question string
+        known_sources: Optional list of known source names for better classification
         
     Returns:
         One of: "monthly_summary", "category_total", "merchant_total", "source_total",
@@ -32,10 +33,27 @@ def classify_intent(question: str) -> str:
     if "top" in question_lower and ("merchant" in question_lower or "where" in question_lower):
         return "top_merchants"
     
+    # Check for superlative category questions (e.g., "which category did I spend the most on")
+    # These should route to category_breakdown, not category_total
+    if "category" in question_lower:
+        superlative_keywords = ["most", "highest", "max", "maximum", "largest"]
+        has_superlative = any(keyword in question_lower for keyword in superlative_keywords)
+        if has_superlative:
+            return "category_breakdown"
+    
     # Check for category total (check for known category names or "category" keyword)
     # This should come before merchant_total to prevent "Food" from being interpreted as a merchant
     if extract_category(question, KNOWN_CATEGORIES) is not None or "category" in question_lower:
         return "category_total"
+    
+    # Check for source total with keywords: "using", "via", "with", "from" + known source
+    # This should come before generic "source" keyword check
+    source_keywords = ["using", "via", "with", "from"]
+    has_source_keyword = any(keyword in question_lower for keyword in source_keywords)
+    if has_source_keyword and known_sources:
+        # Check if a known source is mentioned
+        if extract_source(question, known_sources) is not None:
+            return "source_total"
     
     # Check for source total (but not if breakdown was already matched)
     if "source" in question_lower:
@@ -59,9 +77,30 @@ def classify_intent(question: str) -> str:
     return "unknown"
 
 
+# Month name mapping (case-insensitive)
+MONTH_NAMES = {
+    "jan": "01", "january": "01",
+    "feb": "02", "february": "02",
+    "mar": "03", "march": "03",
+    "apr": "04", "april": "04",
+    "may": "05",
+    "jun": "06", "june": "06",
+    "jul": "07", "july": "07",
+    "aug": "08", "august": "08",
+    "sep": "09", "september": "09",
+    "oct": "10", "october": "10",
+    "nov": "11", "november": "11",
+    "dec": "12", "december": "12"
+}
+
+
 def extract_month(question: str) -> Optional[str]:
     """
     Extract month in "YYYY-MM" format from question.
+    
+    Supports:
+    - "YYYY-MM" format (e.g., "2025-06")
+    - Month names (e.g., "June 2025", "Jun 2025", "June, 2025")
     
     Args:
         question: User question string
@@ -72,7 +111,7 @@ def extract_month(question: str) -> Optional[str]:
     if not question:
         return None
     
-    # Look for YYYY-MM pattern
+    # First, try YYYY-MM pattern
     month_pattern = r'\b(\d{4}-\d{2})\b'
     match = re.search(month_pattern, question)
     if match:
@@ -85,6 +124,19 @@ def extract_month(question: str) -> Optional[str]:
                 return month_str
         except (ValueError, AttributeError):
             pass
+    
+    # Then, try month name patterns: "Month YYYY" or "Month, YYYY"
+    # Pattern: (Jan|January|Feb|...|Dec|December)[,]?\s+(\d{4})
+    month_names_pattern = r'\b(' + '|'.join(MONTH_NAMES.keys()) + r')\b[,]?\s+(\d{4})\b'
+    match = re.search(month_names_pattern, question, re.IGNORECASE)
+    if match:
+        month_name = match.group(1).lower()
+        year = match.group(2)
+        
+        # Get month number from mapping
+        month_num = MONTH_NAMES.get(month_name)
+        if month_num:
+            return f"{year}-{month_num}"
     
     return None
 
@@ -123,6 +175,9 @@ def extract_source(question: str, known_sources: List[str]) -> Optional[str]:
     """
     Extract source name from question by matching against known sources.
     
+    Looks for patterns like "using Cash", "via Chase", "with Credit", "from BofA"
+    and also matches sources anywhere in the question (case-insensitive).
+    
     Args:
         question: User question string
         known_sources: List of known source names to match against
@@ -135,7 +190,29 @@ def extract_source(question: str, known_sources: List[str]) -> Optional[str]:
     
     question_lower = question.lower()
     
-    # Try exact match first (case-insensitive)
+    # First, try to find source after keywords: "using", "via", "with", "from"
+    source_keywords = ["using", "via", "with", "from"]
+    for keyword in source_keywords:
+        # Pattern: keyword + source (e.g., "using Cash", "via Chase")
+        keyword_pattern = rf'\b{re.escape(keyword)}\s+([A-Za-z]+(?:\s+[A-Za-z]+)*)'
+        match = re.search(keyword_pattern, question_lower)
+        if match:
+            potential_source = match.group(1).strip()
+            # Check if it matches any known source (case-insensitive)
+            for source in known_sources:
+                if not source:
+                    continue
+                if source.lower() == potential_source.lower():
+                    return source
+            # Also check if potential_source contains a known source
+            for source in known_sources:
+                if not source:
+                    continue
+                source_lower = source.lower()
+                if source_lower in potential_source.lower():
+                    return source
+    
+    # Fall back to matching sources anywhere in the question (case-insensitive)
     for source in known_sources:
         if not source:
             continue
