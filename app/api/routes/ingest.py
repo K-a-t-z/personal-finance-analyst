@@ -1,8 +1,9 @@
 import uuid
 import io
 from typing import Dict, Any, List, Optional
-from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, status
+from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session
+from sqlalchemy import func
 import pandas as pd
 
 from app.core.db import get_db
@@ -15,6 +16,7 @@ router = APIRouter()
 @router.post("/ingest")
 async def ingest_csv(
     file: UploadFile = File(...),
+    replace: bool = Query(False, description="If True, clear all existing data before ingesting"),
     db: Session = Depends(get_db)
 ) -> Dict[str, Any]:
     """
@@ -26,8 +28,22 @@ async def ingest_csv(
     ingest_id = str(uuid.uuid4())
     filename = file.filename or "unknown.csv"
     error_message: Optional[str] = None
+    deleted_transactions = 0
+    deleted_ingests = 0
     
     try:
+        # If replace is True, clear all existing data
+        if replace:
+            # Count rows before deletion
+            deleted_transactions = db.query(func.count(Transaction.id)).scalar() or 0
+            deleted_ingests = db.query(func.count(Ingest.ingest_id)).scalar() or 0
+            
+            # Delete all Transaction rows
+            db.query(Transaction).delete()
+            # Delete all Ingest rows
+            db.query(Ingest).delete()
+            # Commit the deletions
+            db.commit()
         # Read CSV file content
         contents = await file.read()
         # Read CSV into pandas DataFrame
@@ -91,7 +107,13 @@ async def ingest_csv(
             },
             "categories_seen": categories_seen,
             "sources_seen": sources_seen,
-            "notes": notes
+            "notes": notes,
+            "replace_used": replace,
+            "deleted_rows": {
+                "transactions": deleted_transactions,
+                "ingests": deleted_ingests,
+                "total": deleted_transactions + deleted_ingests
+            } if replace else None
         }
         
     except ValueError as e:

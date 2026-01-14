@@ -22,6 +22,58 @@ export default function UploadPage() {
     }
   };
 
+  const parseCsvPreview = (file: File): Promise<any[]> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const text = e.target?.result as string;
+          const lines = text.split("\n").filter((line) => line.trim());
+          if (lines.length === 0) {
+            resolve([]);
+            return;
+          }
+
+          // Parse header
+          const header = lines[0].split(",").map((h) => h.trim().replace(/^"|"$/g, ""));
+          
+          // Parse rows (limit to 50)
+          const rows = lines.slice(1, 51).map((line) => {
+            // Simple CSV parsing - handle quoted values
+            const values: string[] = [];
+            let current = "";
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+              const char = line[i];
+              if (char === '"') {
+                inQuotes = !inQuotes;
+              } else if (char === "," && !inQuotes) {
+                values.push(current.trim());
+                current = "";
+              } else {
+                current += char;
+              }
+            }
+            values.push(current.trim()); // Last value
+            
+            const row: any = {};
+            header.forEach((col, idx) => {
+              row[col] = values[idx] || "";
+            });
+            return row;
+          });
+
+          resolve(rows);
+        } catch (err) {
+          reject(err);
+        }
+      };
+      reader.onerror = () => reject(new Error("Failed to read file"));
+      reader.readAsText(file);
+    });
+  };
+
   const handleUpload = async () => {
     if (!file) {
       setError("Please select a file first");
@@ -33,8 +85,16 @@ export default function UploadPage() {
     setResult(null);
 
     try {
+      // Parse CSV preview before uploading
+      const preview = await parseCsvPreview(file);
+      
       const response = await ingestCsv(file);
       setResult(response);
+      
+      // Store in localStorage
+      localStorage.setItem("pfa_csv_name", file.name);
+      localStorage.setItem("pfa_csv_preview", JSON.stringify(preview));
+      
       setState("success");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to upload file");
@@ -120,6 +180,11 @@ export default function UploadPage() {
                   <p className="text-sm text-green-700 dark:text-green-300">
                     Your CSV file has been processed successfully.
                   </p>
+                  {file && (
+                    <p className="text-sm text-green-600 dark:text-green-400 mt-2 font-medium">
+                      Active CSV: {file.name}
+                    </p>
+                  )}
                 </div>
 
                 <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
